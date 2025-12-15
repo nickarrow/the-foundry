@@ -192,7 +192,8 @@ class FoundryEnforcer:
         if not is_authorized:
             # Unauthorized edit - restore from history
             print(f"   ❌ Unauthorized edit (owner: {file_owner}, editor: {self.commit_author})")
-            self.restore_file_from_history(path)
+            is_new_file = (status == 'added')
+            self.restore_file_from_history(path, is_new_file)
             self.files_corrected.append(path)
             self.corrections_made = True
         else:
@@ -316,8 +317,16 @@ class FoundryEnforcer:
         
         return None
     
-    def restore_file_from_history(self, path: str):
-        """Restore file to its state in the previous commit"""
+    def restore_file_from_history(self, path: str, is_new_file: bool = False):
+        """Restore file to its state in the previous commit, or delete if new"""
+        if is_new_file:
+            # New file with unauthorized ownership - delete it
+            if os.path.exists(path):
+                os.remove(path)
+                subprocess.run(['git', 'add', path], check=True)
+                print(f"   🗑️  Deleted unauthorized new file")
+            return
+        
         result = subprocess.run(
             ["git", "checkout", f"{self.commit_sha}^", "--", path],
             capture_output=True,
@@ -328,7 +337,13 @@ class FoundryEnforcer:
             subprocess.run(['git', 'add', path], check=True)
             print(f"   🔄 Restored from previous commit")
         else:
-            print(f"   ⚠️  Could not restore file: {result.stderr}")
+            # File doesn't exist in history - must be new, delete it
+            if os.path.exists(path):
+                os.remove(path)
+                subprocess.run(['git', 'add', path], check=True)
+                print(f"   🗑️  Deleted unauthorized new file (no history found)")
+            else:
+                print(f"   ⚠️  Could not restore file: {result.stderr}")
     
     def parse_frontmatter(self, content: str) -> Tuple[Dict, str]:
         """Parse YAML frontmatter from markdown content"""
