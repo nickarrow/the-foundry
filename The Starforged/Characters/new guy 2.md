@@ -5,5 +5,3 @@ foundry:
   last_modified: '2025-12-15T19:56:15.991196+00:00'
 ---
 Okay, Let's test this. 
-
-This is an unauthorized edit. It should be reverted (self-healed). 
