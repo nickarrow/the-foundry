@@ -6,3 +6,7 @@ foundry:
 ---
 
 Okay - this is being pushed from my IDE. Nobody should be able to edit it via Obsidian. 
+
+
+
+HAHAH I am in here making unauthorized edits. Will the workflow stop me?
