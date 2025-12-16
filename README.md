@@ -131,7 +131,8 @@ This all happens in seconds, completely automatically.
 - Ownership tracked via git history
 
 **Hidden files:**
-- `.obsidian/`, `.git/`, etc. are included in enforcement (this protects The Foundry functionality)
+- `.obsidian/`, `.git/`, etc. are excluded from enforcement
+- `.github/` folder is protected by the Guardian system (see below)
 
 ### Admin Privileges
 
@@ -188,15 +189,43 @@ Check your FIT configuration and GitHub credentials. Make sure you have Write ac
 - **No spam** - don't create excessive empty files or folders
 - **Report issues** - if you see problems, contact the admin
 
+## Guardian Protection System
+
+The Foundry uses a two-tier protection system to ensure both player content and the enforcement infrastructure remain secure:
+
+### Tier 1: Enforcement Pipeline (Player Content)
+- Runs on every push to `main`
+- Validates file ownership for player content
+- Reverts unauthorized edits to player files
+- Excludes `.github/` folder (protected by Guardian)
+
+### Tier 2: Guardian Workflow (Infrastructure Protection)
+- Runs every 15 minutes from a protected branch (`protected-workflows`)
+- Protects the enforcement system itself from tampering
+- If workflows are compromised, searches git history to find last known good state
+- Restores entire repository to that state (maximum 15-minute vulnerability window)
+
+**Why Guardian is needed:** Without it, an attacker could delete the enforcement workflows, then delete/modify any content they want. Guardian ensures that even if workflows are compromised, everything gets restored automatically.
+
+**How it works:**
+1. Guardian runs from `protected-workflows` branch (players cannot modify this branch)
+2. Every 15 minutes, checks if `.github/` files are intact
+3. If compromised, finds the last commit where workflows were correct
+4. Restores all files (except `.github/`) from that commit
+5. Commits restoration and pushes to main
+
+For complete Guardian documentation, see the `protected-workflows` branch README.
+
 ## Technical Architecture
 
 For developers and the technically curious:
 
 - **Version Control:** Git/GitHub
-- **Automation:** GitHub Actions
+- **Automation:** GitHub Actions (two workflows: enforcement + guardian)
 - **Enforcement Script:** Python with PyYAML
 - **Sync Tool:** FIT plugin for Obsidian
 - **Game System:** Iron Vault plugin for Obsidian
+- **Protection:** Two-tier system (enforcement pipeline + guardian workflow)
 
 ## Contributing
 

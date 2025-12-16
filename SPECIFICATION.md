@@ -75,7 +75,8 @@ foundry:
 - Ownership tracked via git history (no frontmatter possible)
 
 #### Hidden Files & Folders
-- `.obsidian/`, `.git/`, `.gitignore`, etc. are **included** in enforcement
+- `.obsidian/`, `.git/`, `.gitignore`, etc. are **excluded** from enforcement
+- `.github/` folder is **excluded** from enforcement (protected by Guardian system instead)
 
 ---
 
@@ -97,6 +98,7 @@ foundry:
 #### 1. Scan Changed Files
 - Use `git diff` to identify modified, added, renamed, or deleted files
 - Only process changed files for performance
+- **Exclude `.github/` folder** - protected by Guardian system (see Guardian Protection System section)
 
 #### 2. Inject Foundry Frontmatter
 For markdown files without Foundry frontmatter:
@@ -272,18 +274,187 @@ This ensures enforcement actions run sequentially, preventing merge conflicts wh
 the-foundry/
 ├── .github/
 │   ├── scripts/
-│   │   └── enforce_ownership.py
+│   │   └── enforce_ownership.py    # Enforcement script
 │   └── workflows/
-│       └── enforce-ownership.yml
-├── .obsidian/                    # Excluded from enforcement
-├── The Starforged/               # Game folders (any structure)
-    ├── Characters/
-    ├── Journals/
-    └── ...
-├── LICENSE                       # Root file (owned by nickarrow)
-├── README.md                     # Root file (owned by nickarrow)
-└── SPECIFICATION.md              # This file
+│       ├── enforce-ownership.yml   # Main enforcement workflow
+│       └── guardian.yml            # Guardian protection (on protected-workflows branch)
+├── .obsidian/                      # Excluded from enforcement
+├── The Starforged/                 # Game folders (any structure)
+│   ├── Characters/
+│   ├── Journals/
+│   └── ...
+├── LICENSE                         # Root file (owned by nickarrow)
+├── README.md                       # Root file (owned by nickarrow)
+└── SPECIFICATION.md                # This file
 ```
+
+### Branch Structure
+- **`main`** - Active repository with all player content and workflows
+- **`protected-workflows`** - Protected branch containing only canonical `.github/` files
+  - Only admin can push to this branch
+  - Guardian workflow runs from here
+  - Contains "source of truth" for enforcement infrastructure
+
+---
+
+## Guardian Protection System
+
+### Problem Statement
+
+The enforcement pipeline protects player content, but what protects the enforcement pipeline itself? 
+
+**Attack scenario without Guardian:**
+1. Attacker deletes `.github/workflows/enforce-ownership.yml`
+2. Enforcement pipeline stops running
+3. Attacker can now delete/modify any content without restriction
+4. Manual intervention required to restore
+
+**Solution:** Guardian workflow runs from a separate protected branch that players cannot modify.
+
+### Architecture
+
+#### Two-Tier Protection
+
+**Tier 1: Enforcement Pipeline** (runs on `main`)
+- Protects player content from unauthorized edits
+- Validates file ownership
+- Reverts unauthorized changes
+- **Excludes `.github/` folder** (protected by Tier 2)
+
+**Tier 2: Guardian Workflow** (runs on `protected-workflows`)
+- Protects the enforcement infrastructure
+- Runs every 15 minutes from protected branch
+- Detects compromised workflows
+- Restores entire repository to last known good state
+
+#### Protected Branch: `protected-workflows`
+
+**Purpose:**
+- Contains canonical versions of `.github/` files
+- Guardian workflow runs from here (cannot be disabled by players)
+- Minimal branch (only `.github/` folder + README)
+
+**Branch Protection Rules:**
+- ✅ Restrict updates - Only admin can push
+- ✅ Restrict deletions - Branch cannot be deleted
+- ✅ Require pull request before merging - All changes need approval
+- ✅ Block force pushes - History cannot be rewritten
+- ✅ Required approvals: 1 - Admin must approve any PRs
+
+**Critical:** `main` and `protected-workflows` should NEVER be merged. They serve different purposes and merging would cause file deletions.
+
+### Guardian Workflow Logic
+
+**Runs every 15 minutes:**
+
+1. **Check Workflow Integrity**
+   ```
+   For each protected file (.github/workflows/enforce-ownership.yml, etc.):
+     - Check if file exists on main
+     - Compare with canonical version from protected-workflows
+     - If missing or different: mark as TAMPERED
+   ```
+
+2. **Find Last Known Good State**
+   ```
+   If TAMPERED:
+     Search git history backwards:
+       For each commit:
+         Check if all workflow files exist and match canonical versions
+         If yes: this is LAST_GOOD_COMMIT
+         Break
+     
+     Safety limit: Check up to 100 commits
+   ```
+
+3. **Restore Repository**
+   ```
+   If LAST_GOOD_COMMIT found:
+     Get all files changed since LAST_GOOD_COMMIT
+     For each changed file (excluding .github/):
+       - Deleted files: restore from LAST_GOOD_COMMIT
+       - Modified files: restore from LAST_GOOD_COMMIT
+       - Added files: delete them
+       - Renamed files: revert to original name
+     
+     Restore workflow files from protected-workflows branch
+     Commit all restorations
+     Push to main
+   ```
+
+### Attack Scenario Protection
+
+**Example sustained attack:**
+
+```
+1:59 PM - Repository in good state
+2:00 PM - Attacker deletes enforce-ownership.yml (commit 1)
+2:01 PM - Attacker deletes 50 player files (commit 2)
+2:03 PM - Attacker modifies 20 more files (commit 3)
+2:05 PM - Attacker renames folders (commit 4)
+2:10 PM - Attacker makes more malicious commits (commits 5-10)
+
+2:15 PM - Guardian runs:
+  - Detects workflows are missing
+  - Searches backwards through commits 10, 9, 8, 7, 6, 5, 4, 3, 2, 1
+  - Finds commit at 1:59 PM has intact workflows
+  - Restores ALL files (except .github/) from 1:59 PM
+  - Restores workflow files from protected-workflows
+  - Commits restoration
+  - Pushes to main
+
+2:16 PM - Repository fully restored to 1:59 PM state
+```
+
+**Maximum vulnerability window:** 15 minutes
+
+### Protected Files
+
+Guardian monitors these critical files:
+- `.github/workflows/enforce-ownership.yml` - Main enforcement workflow
+- `.github/scripts/enforce_ownership.py` - Enforcement script
+- `.github/workflows/guardian.yml` - Guardian itself (self-protecting)
+
+### Performance Considerations
+
+- Guardian searches up to 100 commits to find last good state
+- Typically finds it in 1-5 commits (recent attacks)
+- Safety limit prevents infinite loops
+- 15-minute interval balances protection vs. resource usage
+
+### Updating Workflows (Admin Only)
+
+**Process:**
+1. Update files on `protected-workflows` branch first
+2. Manually copy changes to `main` (DO NOT MERGE)
+3. Guardian will see files match and allow them
+
+**Why not merge?**
+- `protected-workflows` is a minimal branch (only `.github/` + README)
+- `main` has all player content
+- Merging would delete all player content from main
+- Branches serve different purposes and must remain separate
+
+### Limitations
+
+- 15-minute vulnerability window (attacker can cause damage before Guardian runs)
+- Guardian only activates when workflows are compromised
+- If workflows are intact, Guardian assumes Enforcement Pipeline is handling content
+- Requires admin to have branch protection properly configured
+
+### Monitoring
+
+**GitHub Actions Tab:**
+- Guardian runs show up as "Guardian - Protect Workflows"
+- Logs show:
+  - Workflow integrity check results
+  - Number of commits searched
+  - Files restored (if any)
+  - Timestamp of last known good state
+
+**Manual Trigger:**
+- Admin can manually trigger Guardian from Actions tab
+- Useful for immediate checking after suspected attack
 
 ---
 
@@ -311,6 +482,8 @@ The Foundry ownership model is successful when:
 4. ✅ Players naturally collaborate across campaign boundaries
 5. ✅ Zero data loss (all valid edits preserved, invalid edits reverted)
 6. ✅ Repository remains stable and usable as it grows
+7. ✅ Enforcement infrastructure is protected from tampering (Guardian)
+8. ✅ Repository can self-heal from attacks within 15 minutes (Guardian)
 
 ---
 
@@ -328,13 +501,21 @@ The Foundry ownership model is successful when:
 3. ✅ Handle renames and deletions
 4. ✅ Test with multiple simulated users
 
-### Phase 3: Polish 🚧 In Progress
+### Phase 3: Guardian Protection ✅ Complete
+1. ✅ Create protected-workflows branch
+2. ✅ Implement Guardian workflow
+3. ✅ Add workflow integrity checking
+4. ✅ Add last-known-good-state restoration
+5. ✅ Configure branch protection rules
+6. ✅ Test attack scenarios
+
+### Phase 4: Polish 🚧 In Progress
 1. ✅ Optimize performance (changed files only)
 2. ✅ Add comprehensive logging
 3. ✅ Update root-level documentation
 4. ⏳ Invite beta testers
 
-### Phase 4: Launch
+### Phase 5: Launch
 1. Announce to Ironsworn/Starforged community
 2. Monitor for edge cases
 3. Iterate based on real-world usage
@@ -380,6 +561,6 @@ The Foundry ownership model is successful when:
 
 ---
 
-**Last Updated:** 2025-12-15  
+**Last Updated:** 2025-12-16  
 **Author:** nickarrow  
-**Status:** Implemented and Active
+**Status:** Implemented and Active (with Guardian Protection)
