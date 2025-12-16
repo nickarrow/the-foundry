@@ -2,7 +2,7 @@
 foundry:
   file_owner: nickarrow
   created_date: '2025-12-15T20:55:23.390124+00:00'
-  last_modified: '2025-12-16T04:01:54.063681+00:00'
+  last_modified: '2025-12-16T17:16:51.017758+00:00'
 ---
 # The Foundry - Technical Specification
 
