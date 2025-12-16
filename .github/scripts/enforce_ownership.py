@@ -88,8 +88,9 @@ class FoundryEnforcer:
             parts = line.split('\t')
             status = parts[0]
             
-            # Skip hidden files/folders
-            if any(p.startswith('.') for p in parts[1].split('/')):
+            # Skip hidden files/folders (except .github which we want to protect)
+            path_parts = parts[1].split('/')
+            if any(p.startswith('.') and p != '.github' for p in path_parts):
                 continue
             
             if status.startswith('R'):  # Rename
@@ -143,6 +144,9 @@ class FoundryEnforcer:
         path = file_info['path']
         status = file_info['status']
         
+        # Check if file is in .github folder
+        is_github_folder = path.startswith('.github/')
+        
         # Read file content
         with open(path, 'r', encoding='utf-8') as f:
             content = f.read()
@@ -166,11 +170,17 @@ class FoundryEnforcer:
             if FOUNDRY_NAMESPACE not in frontmatter:
                 frontmatter[FOUNDRY_NAMESPACE] = {}
             
-            frontmatter[FOUNDRY_NAMESPACE]['file_owner'] = self.commit_author
+            # Files in .github folder are always admin-owned
+            if is_github_folder:
+                frontmatter[FOUNDRY_NAMESPACE]['file_owner'] = REPO_ADMIN
+            else:
+                frontmatter[FOUNDRY_NAMESPACE]['file_owner'] = self.commit_author
+            
             frontmatter[FOUNDRY_NAMESPACE]['created_date'] = self.get_iso_timestamp()
             frontmatter[FOUNDRY_NAMESPACE]['last_modified'] = self.get_iso_timestamp()
             needs_update = True
-            print(f"   ➕ Injecting frontmatter (owner: {self.commit_author})")
+            owner = frontmatter[FOUNDRY_NAMESPACE]['file_owner']
+            print(f"   ➕ Injecting frontmatter (owner: {owner})")
         
         # Validate ownership
         file_owner = frontmatter.get(FOUNDRY_NAMESPACE, {}).get('file_owner')
@@ -228,8 +238,12 @@ class FoundryEnforcer:
         path = file_info['path']
         status = file_info['status']
         
+        # Check if file is in .github folder
+        is_github_folder = path.startswith('.github/')
+        
         # Determine owner
-        if is_root_level:
+        if is_root_level or is_github_folder:
+            # Root-level files and .github folder files are admin-only
             file_owner = REPO_ADMIN
         else:
             # Get original committer from history
