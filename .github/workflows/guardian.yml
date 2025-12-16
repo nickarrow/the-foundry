@@ -87,13 +87,11 @@ jobs:
           git config user.name "Guardian Bot"
           git config user.email "actions@github.com"
           git add .github/workflows/ .github/scripts/
-          git commit -m "🛡️ Guardian: Restored workflow files (unauthorized modification detected)
-
-Workflow files must not be modified by players.
-Only the repository admin can update these files via the protected-workflows branch.
-
-This is an automated restoration to maintain The Foundry's integrity."
+          git commit -m "Guardian: Restored workflow files (unauthorized modification detected)" \
+                     -m "Workflow files must not be modified by players." \
+                     -m "Only the repository admin can update these files via the protected-workflows branch." \
+                     -m "This is an automated restoration to maintain The Foundry's integrity."
           git push origin main
           
           echo ""
-          echo "🛡️ Workflows have been restored to their canonical versions"
+          echo "Workflows have been restored to their canonical versions"
