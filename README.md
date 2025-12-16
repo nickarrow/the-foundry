@@ -4,7 +4,32 @@ foundry:
   created_date: '2025-12-15T20:25:33.504586+00:00'
   last_modified: '2025-12-16T20:26:31.517950+00:00'
 ---
-# The
+# The Foundry
+
+> A shared narrative universe for **Ironsworn**, **Starforged**, and **Sundered Isles** players
+
+## What is The Foundry?
+
+**The Foundry** is a collaborative storytelling repository where players using **Obsidian + Iron Vault** can:
+- 📖 **Publish their entire campaign vault** - share your adventures with the community
+- 🔍 **Explore other campaigns** - read and discover the stories of fellow players
+- 🌍 **Build shared worlds** - contribute to campaigns and create interconnected narratives
+- 🤝 **Collaborate organically** - add characters, journals, and content to any campaign
+
+The Foundry uses automatic governance through GitHub Actions to manage permissions and ownership, making collaboration effortless and invisible.
+## How It Works
+
+### The Magic: Automatic Ownership
+
+Every file in The Foundry has exactly one owner. When you create a file, you own it. When someone else creates a file, they own it. Simple.
+
+**What you can do:**
+- ✅ Create new files anywhere in the repository
+- ✅ Edit, rename, move, or delete your own files
+- ✅ Read everyone's files
+- ❌ Edit or delete files owned by others
+
+**What happens if you try to edit someone else's file?**
 
 The Foundry automatically detects unauthorized edits and silently restores the file to its correct state. Your next sync will pull the corrected version. No errors, no drama, just clean content.
 
