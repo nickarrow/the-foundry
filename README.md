@@ -194,27 +194,37 @@ Check your FIT configuration and GitHub credentials. Make sure you have Write ac
 The Foundry uses a two-tier protection system to ensure both player content and the enforcement infrastructure remain secure:
 
 ### Tier 1: Enforcement Pipeline (Player Content)
-- Runs on every push to `main`
+- Runs on every push to `main` in this repository
 - Validates file ownership for player content
 - Reverts unauthorized edits to player files
-- Excludes `.github/` folder (protected by Guardian)
+- Excludes `.github/` folder (protected by external Guardian)
 
-### Tier 2: Guardian Workflow (Infrastructure Protection)
-- Runs every 15 minutes from a protected branch (`protected-workflows`)
-- Protects the enforcement system itself from tampering
+### Tier 2: External Guardian (Infrastructure Protection)
+- Runs every 15 minutes from a separate private repository: [`the-foundry-guardian`](https://github.com/nickarrow/the-foundry-guardian)
+- Monitors this repository for compromised workflows
+- Cannot be disabled by attackers (they don't have access to the guardian repo)
 - If workflows are compromised, searches git history to find last known good state
 - Restores entire repository to that state (maximum 15-minute vulnerability window)
 
-**Why Guardian is needed:** Without it, an attacker could delete the enforcement workflows, then delete/modify any content they want. Guardian ensures that even if workflows are compromised, everything gets restored automatically.
+**Why external Guardian is needed:** Without it, an attacker could delete the enforcement workflows from this repository, then delete/modify any content they want. The external Guardian ensures that even if all workflows are deleted here, everything gets restored automatically from the external monitoring system.
 
 **How it works:**
-1. Guardian runs from `protected-workflows` branch (players cannot modify this branch)
-2. Every 15 minutes, checks if `.github/` files are intact
-3. If compromised, finds the last commit where workflows were correct
-4. Restores all files (except `.github/`) from that commit
-5. Commits restoration and pushes to main
+1. Guardian runs from separate private repository (only admin has access)
+2. Every 15 minutes, clones this repository and checks if `.github/` files are intact
+3. Compares workflows against canonical versions stored in guardian repo
+4. If compromised, finds the last commit where workflows were correct
+5. Restores workflow files from canonical versions
+6. Restores all other files from last known good commit
+7. Pushes restoration to this repository
+8. Logs attack details in guardian repo workflow output
 
-For complete Guardian documentation, see the `protected-workflows` branch README.
+**Attack scenario protection:**
+- 2:00 PM - Attacker deletes enforcement workflows
+- 2:01 PM - Attacker deletes player content
+- 2:15 PM - External Guardian detects compromise and restores everything
+- 2:16 PM - Repository fully restored, attacker's changes reverted
+
+For complete Guardian documentation, see the [`the-foundry-guardian`](https://github.com/nickarrow/the-foundry-guardian) repository.
 
 ## Technical Architecture
 

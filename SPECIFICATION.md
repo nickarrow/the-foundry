@@ -270,14 +270,15 @@ concurrency:
 This ensures enforcement actions run sequentially, preventing merge conflicts when multiple players push simultaneously.
 
 ### Repository Structure
+
+**Main Repository:** `the-foundry`
 ```
 the-foundry/
 ├── .github/
 │   ├── scripts/
 │   │   └── enforce_ownership.py    # Enforcement script
 │   └── workflows/
-│       ├── enforce-ownership.yml   # Main enforcement workflow
-│       └── guardian.yml            # Guardian protection (on protected-workflows branch)
+│       └── enforce-ownership.yml   # Main enforcement workflow
 ├── .obsidian/                      # Excluded from enforcement
 ├── The Starforged/                 # Game folders (any structure)
 │   ├── Characters/
@@ -288,12 +289,24 @@ the-foundry/
 └── SPECIFICATION.md                # This file
 ```
 
-### Branch Structure
-- **`main`** - Active repository with all player content and workflows
-- **`protected-workflows`** - Protected branch containing only canonical `.github/` files
-  - Only admin can push to this branch
-  - Guardian workflow runs from here
-  - Contains "source of truth" for enforcement infrastructure
+**Guardian Repository:** `the-foundry-guardian` (private)
+```
+the-foundry-guardian/
+├── .github/
+│   └── workflows/
+│       └── monitor.yml             # Guardian monitoring workflow
+├── canonical-workflows/
+│   ├── enforce-ownership.yml       # Canonical enforcement workflow
+│   └── enforce_ownership.py        # Canonical enforcement script
+└── README.md                       # Guardian documentation
+```
+
+### Repository Relationship
+- **`the-foundry`** - Main collaborative repository (players have write access)
+- **`the-foundry-guardian`** - Private monitoring repository (only admin has access)
+- Guardian monitors `the-foundry` every 15 minutes
+- Guardian cannot be disabled by players (separate private repo)
+- Canonical workflow versions stored in guardian repo
 
 ---
 
@@ -309,39 +322,51 @@ The enforcement pipeline protects player content, but what protects the enforcem
 3. Attacker can now delete/modify any content without restriction
 4. Manual intervention required to restore
 
-**Solution:** Guardian workflow runs from a separate protected branch that players cannot modify.
+**Solution:** Guardian workflow runs from a separate private repository that attackers cannot access.
 
 ### Architecture
 
 #### Two-Tier Protection
 
-**Tier 1: Enforcement Pipeline** (runs on `main`)
+**Tier 1: Enforcement Pipeline** (runs on `main` in `the-foundry`)
 - Protects player content from unauthorized edits
 - Validates file ownership
 - Reverts unauthorized changes
 - **Excludes `.github/` folder** (protected by Tier 2)
 
-**Tier 2: Guardian Workflow** (runs on `protected-workflows`)
+**Tier 2: External Guardian** (runs in separate repository)
 - Protects the enforcement infrastructure
-- Runs every 15 minutes from protected branch
+- Runs every 15 minutes from [`the-foundry-guardian`](https://github.com/nickarrow/the-foundry-guardian) repository
 - Detects compromised workflows
 - Restores entire repository to last known good state
+- Cannot be disabled by attackers (separate private repo)
 
-#### Protected Branch: `protected-workflows`
+#### External Guardian Repository
+
+**Repository:** [`the-foundry-guardian`](https://github.com/nickarrow/the-foundry-guardian)
 
 **Purpose:**
-- Contains canonical versions of `.github/` files
-- Guardian workflow runs from here (cannot be disabled by players)
-- Minimal branch (only `.github/` folder + README)
+- Private repository (only admin has access)
+- Contains Guardian monitoring workflow
+- Stores canonical versions of `.github/` files
+- Monitors `the-foundry` repository every 15 minutes
+- Cannot be disabled by players (they don't have access)
 
-**Branch Protection Rules:**
-- ✅ Restrict updates - Only admin can push
-- ✅ Restrict deletions - Branch cannot be deleted
-- ✅ Require pull request before merging - All changes need approval
-- ✅ Block force pushes - History cannot be rewritten
-- ✅ Required approvals: 1 - Admin must approve any PRs
+**How it works:**
+1. Scheduled workflow runs every 15 minutes
+2. Clones `the-foundry` repository
+3. Compares workflow files against canonical versions
+4. If compromised, finds last known good commit
+5. Restores workflows from canonical versions
+6. Restores content from last good commit
+7. Pushes restoration to `the-foundry`
+8. Logs attack details in workflow output
 
-**Critical:** `main` and `protected-workflows` should NEVER be merged. They serve different purposes and merging would cause file deletions.
+**Security:**
+- Separate repository = cannot be disabled by attackers
+- Private repository = only admin can access
+- Uses Personal Access Token with minimal permissions
+- All Guardian actions logged in GitHub Actions
 
 ### Guardian Workflow Logic
 
@@ -425,15 +450,29 @@ Guardian monitors these critical files:
 ### Updating Workflows (Admin Only)
 
 **Process:**
-1. Update files on `protected-workflows` branch first
-2. Manually copy changes to `main` (DO NOT MERGE)
-3. Guardian will see files match and allow them
+1. Update workflow files in `the-foundry` repository
+2. Test that they work correctly
+3. Copy updated files to `the-foundry-guardian/canonical-workflows/`
+4. Commit and push to guardian repository
+5. Guardian will now use the new canonical versions for comparison
 
-**Why not merge?**
-- `protected-workflows` is a minimal branch (only `.github/` + README)
-- `main` has all player content
-- Merging would delete all player content from main
-- Branches serve different purposes and must remain separate
+**Example:**
+```bash
+# 1. Update in the-foundry
+cd the-foundry
+# Edit .github/workflows/enforce-ownership.yml
+git add .github/
+git commit -m "Update enforcement workflow"
+git push
+
+# 2. Update canonical versions in guardian
+cd ../the-foundry-guardian
+cp ../the-foundry/.github/workflows/enforce-ownership.yml canonical-workflows/
+cp ../the-foundry/.github/scripts/enforce_ownership.py canonical-workflows/
+git add canonical-workflows/
+git commit -m "Update canonical workflows"
+git push
+```
 
 ### Limitations
 
@@ -444,17 +483,25 @@ Guardian monitors these critical files:
 
 ### Monitoring
 
-**GitHub Actions Tab:**
-- Guardian runs show up as "Guardian - Protect Workflows"
+**Guardian Repository Actions Tab:**
+- Go to [`the-foundry-guardian`](https://github.com/nickarrow/the-foundry-guardian) → Actions
+- Guardian runs show up as "Guardian - Monitor The Foundry"
 - Logs show:
   - Workflow integrity check results
   - Number of commits searched
   - Files restored (if any)
   - Timestamp of last known good state
+  - Attack details (attackers, malicious commits, files affected)
 
 **Manual Trigger:**
-- Admin can manually trigger Guardian from Actions tab
+- Admin can manually trigger Guardian from guardian repo Actions tab
 - Useful for immediate checking after suspected attack
+- Select "Guardian - Monitor The Foundry" → "Run workflow"
+
+**Attack Detection:**
+- When attack is detected, full details logged in workflow output
+- Review Actions tab in guardian repo to see attack logs
+- Includes attacker usernames, malicious commits, and files affected
 
 ---
 
