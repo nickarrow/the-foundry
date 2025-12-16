@@ -28,7 +28,7 @@ FOUNDRY_NAMESPACE = "foundry"
 
 class FoundryEnforcer:
     def __init__(self):
-        self.commit_author = os.environ.get("COMMIT_AUTHOR", "unknown")
+        self.commit_author = os.environ.get("COMMIT_AUTHOR", "unknown").lower()
         self.commit_sha = os.environ.get("COMMIT_SHA", "HEAD")
         self.corrections_made = False
         self.files_corrected = []
@@ -193,11 +193,11 @@ class FoundryEnforcer:
             file_owner = self.commit_author
             needs_update = True
         
-        # Check for admin override
+        # Check for admin override (case-insensitive comparison)
         admin_override = frontmatter.get(FOUNDRY_NAMESPACE, {}).get('admin_override', False)
-        has_admin_override = (self.commit_author == REPO_ADMIN and admin_override is True)
+        has_admin_override = (self.commit_author.lower() == REPO_ADMIN.lower() and admin_override is True)
         
-        is_authorized = (self.commit_author == file_owner or has_admin_override)
+        is_authorized = (self.commit_author.lower() == file_owner.lower() or has_admin_override)
         
         if not is_authorized:
             # Unauthorized edit - restore from history
@@ -252,7 +252,7 @@ class FoundryEnforcer:
             else:
                 file_owner = self.get_owner_from_history(path)
         
-        is_authorized = (self.commit_author == file_owner or self.commit_author == REPO_ADMIN)
+        is_authorized = (self.commit_author.lower() == file_owner.lower() or self.commit_author.lower() == REPO_ADMIN.lower())
         
         if not is_authorized:
             print(f"   ❌ Unauthorized edit (owner: {file_owner}, editor: {self.commit_author})")
@@ -276,7 +276,7 @@ class FoundryEnforcer:
         
         # Check for admin override in the file before it was deleted
         has_admin_override = False
-        if self.commit_author == REPO_ADMIN:
+        if self.commit_author.lower() == REPO_ADMIN.lower():
             # Check if the deleted file had admin_override flag
             result = subprocess.run(
                 ["git", "show", f"{self.commit_sha}^:{path}"],
@@ -288,7 +288,7 @@ class FoundryEnforcer:
                 admin_override = frontmatter.get(FOUNDRY_NAMESPACE, {}).get('admin_override', False)
                 has_admin_override = (admin_override is True)
         
-        is_authorized = (self.commit_author == file_owner or has_admin_override)
+        is_authorized = (self.commit_author.lower() == file_owner.lower() or has_admin_override)
         
         if not is_authorized:
             print(f"   ❌ Unauthorized deletion (owner: {file_owner}, editor: {self.commit_author})")
