@@ -39,6 +39,11 @@ class FoundryEnforcer:
         print(f"   Commit author: {self.commit_author}")
         print(f"   Commit SHA: {self.commit_sha}")
         
+        # Check if this is a guardian restoration commit
+        if self.is_guardian_commit():
+            print("🛡️  Guardian restoration commit detected - skipping enforcement")
+            return
+        
         # Step 1: Get changed files
         changed_files = self.get_changed_files()
         if not changed_files:
@@ -56,6 +61,39 @@ class FoundryEnforcer:
             self.commit_corrections()
         else:
             print("\n✅ No corrections needed - all edits were valid")
+    
+    def is_guardian_commit(self) -> bool:
+        """Check if the current commit is from the guardian restoration workflow"""
+        # Get commit author and message
+        result = subprocess.run(
+            ["git", "log", "-1", "--format=%an|%ae|%s", self.commit_sha],
+            capture_output=True,
+            text=True
+        )
+        
+        if result.returncode != 0:
+            return False
+        
+        output = result.stdout.strip()
+        parts = output.split('|')
+        
+        if len(parts) < 3:
+            return False
+        
+        author_name = parts[0]
+        author_email = parts[1]
+        commit_message = parts[2]
+        
+        # Check if commit is from Guardian Bot
+        is_guardian_author = (
+            author_name == "Guardian Bot" and 
+            author_email == "guardian@the-foundry.bot"
+        )
+        
+        # Check if message starts with "Guardian:"
+        is_guardian_message = commit_message.startswith("Guardian:")
+        
+        return is_guardian_author and is_guardian_message
     
     def get_changed_files(self) -> List[Dict]:
         """Get list of changed files from git diff"""
