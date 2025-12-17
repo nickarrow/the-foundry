@@ -29,7 +29,7 @@ The Foundry automatically detects unauthorized edits and silently restores the f
 
 ### File Ownership Tracking
 
-Ownership is tracked in a centralized registry file at `.foundry/registry.yml`:
+Ownership is tracked in a centralized registry `registry.yml` file at [The-Foundry-Guardian](https://github.com/nickarrow/the-foundry-guardian/blob/main/registry.yml) repo:
 
 ```yaml
 files:
@@ -48,7 +48,7 @@ files:
 
 - **Obsidian** - [Download here](https://obsidian.md/)
 - **Iron Vault plugin** - Install from Obsidian Community Plugins
-- **FIT plugin** - [Install from here](https://github.com/joshuakto/fit)
+- **FIT plugin** - Install from Obsidian Community Plugins
 - **GitHub account** - [Sign up here](https://github.com/)
 
 ### Setup Instructions
@@ -263,7 +263,7 @@ Changes to the core system require admin approval.
 
 ## License
 
-See [LICENSE](LICENSE) for details.
+See [LICENSE](.LICENSE) for details.
 
 ## Questions?
 

@@ -33,7 +33,7 @@ In a shared repository where multiple players contribute to interconnected campa
 
 ### Registry-Based Tracking
 
-All file ownership is tracked in a centralized registry at `.foundry/registry.yml`:
+Ownership is tracked in a centralized registry `registry.yml` file at [The-Foundry-Guardian](https://github.com/nickarrow/the-foundry-guardian/blob/main/registry.yml) repo:
 
 ```yaml
 files:
@@ -169,11 +169,11 @@ For valid operations:
 - **Admin override used**: Remove `admin_override` flag from entry
 
 #### 8. Save Registry
-- Write updated registry to `.foundry/registry.yml`
-- Stage registry file for commit
+- Write updated registry to `registry.yml` on contained within [The-Foundry-Guardian](https://github.com/nickarrow/the-foundry-guardian/blob/main/registry.yml) repo:
+- Commit registry file changes
 
 #### 9. Commit Corrections
-- If any files were corrected OR registry was updated, create a new commit
+- If any files were corrected, create a new commit
 - Commit message: `"Enforced ownership rules"`
 - Commit author: "Foundry Enforcer" (enforcement workflow identity)
 - Push corrected state back to `main`
@@ -203,7 +203,7 @@ For valid operations:
 
 ### Merge Conflicts
 - **Low risk** due to self-healing enforcement
-- Most conflicts occur when multiple users edit the same file
+- Most conflicts occur when a user makes an edit to a file they do not own
 - Enforcement pipeline catches unauthorized edits before they propagate
 - If conflict occurs: unauthorized edits are reverted, owner's changes win
 
@@ -312,7 +312,7 @@ the-foundry/
 │   ├── Characters/
 │   ├── Journals/
 │   └── ...
-├── LICENSE                         # Root file (tracked in registry)
+├── .LICENSE                        # Root file (tracked in registry)
 ├── README.md                       # Root file (tracked in registry)
 ├── SPECIFICATION.md                # This file (tracked in registry)
 └── REGISTRY_MIGRATION.md           # Registry system documentation
@@ -328,12 +328,13 @@ the-foundry-guardian/
 │   ├── enforce-ownership.yml       # Canonical enforcement workflow
 │   ├── enforce_ownership.py        # Canonical enforcement script
 │   └── registry.yml                # Canonical registry structure
-└── README.md                       # Guardian documentation
+├── README.md                       # Guardian documentation
+└── registry.yml                    # File ownership registry
 ```
 
 ### Repository Relationship
 - **`the-foundry`** - Main collaborative repository (players have write access)
-- **`the-foundry-guardian`** - Private monitoring repository (only admin has access)
+- **`the-foundry-guardian`** - Private monitoring and file registry repository (only admin has access)
 - Guardian monitors `the-foundry` every 15 minutes
 - Guardian cannot be disabled by players (separate private repo)
 - Canonical workflow versions stored in guardian repo
