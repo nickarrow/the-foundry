@@ -1,4 +1,4 @@
-# The Foundry - Technical Specification 
+# The Foundry - Technical Specification
 
 ## Project Overview
 

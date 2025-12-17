@@ -1,4 +1,4 @@
-# The Foundry 
+# The Foundry
 
 > A shared narrative universe for **Ironsworn**, **Starforged**, and **Sundered Isles** players
 
