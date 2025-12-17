@@ -67,8 +67,8 @@ class FoundryEnforcer:
         if self.registry_updated:
             self.save_registry()
         
-        # Step 9: Commit corrections if needed
-        if self.corrections_made or self.registry_updated:
+        # Step 9: Commit corrections if needed (only if there were actual corrections)
+        if self.corrections_made:
             self.commit_corrections()
         else:
             print("\n✅ No corrections needed - all edits were valid")
