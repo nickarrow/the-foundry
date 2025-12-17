@@ -2,7 +2,7 @@
 
 > A shared narrative universe for **Ironsworn**, **Starforged**, and **Sundered Isles** players
 
-## What is The Foundry?
+## What is The Foundry? 
 
 **The Foundry** is a collaborative storytelling repository where players using **Obsidian + Iron Vault** can:
 - 📖 **Publish their entire campaign vault** - share your adventures with the community
