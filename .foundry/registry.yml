@@ -2,3 +2,39 @@
 # This file tracks ownership and integrity of all non-hidden files in the repository.
 # DO NOT EDIT MANUALLY - Managed automatically by the Foundry enforcement system.
 
+files:
+  1. Welcome to The Foundry.md:
+    checksum: 6fb78460fb32cf521151970a82cf907039b78c2322a5e190a7aa6bfe2e5cfa4b
+    created: '2025-12-17T16:24:30.677797+00:00'
+    modified: '2025-12-17T16:24:30.677797+00:00'
+    owner: nickarrow
+  2. Getting Started.md:
+    checksum: 0c2d44023c04e4714459743fbd5c2ae9efc43e619eb8be86d623a6b1cd56f502
+    created: '2025-12-17T16:24:30.677888+00:00'
+    modified: '2025-12-17T16:24:30.677888+00:00'
+    owner: nickarrow
+  3. Tips and Best Practices.md:
+    checksum: 40aba3941a7a147bcaa9c8f514535ce03f40d169b7caf08201bfcbc909e994fb
+    created: '2025-12-17T16:24:30.677943+00:00'
+    modified: '2025-12-17T16:24:30.677943+00:00'
+    owner: nickarrow
+  4. Iron Vault Feature Wishlist and Bugs.md:
+    checksum: f6851546459abc87c7317bdd7855745cc627d0c6800fcb970fe67ca3d29e6a23
+    created: '2025-12-17T16:24:30.677986+00:00'
+    modified: '2025-12-17T16:24:30.677986+00:00'
+    owner: nickarrow
+  5. The Foundry Changelog.md:
+    checksum: 44ecbaf99b5b860ff1335febdcae2a3aa6a8f2cede712fee384d0cc7c87491a3
+    created: '2025-12-17T16:24:30.678025+00:00'
+    modified: '2025-12-17T16:24:30.678025+00:00'
+    owner: nickarrow
+  README.md:
+    checksum: 128fc4071e625045794aa5afbc75ca7232888f057b8482de6b70f986df27adbb
+    created: '2025-12-17T16:24:30.678087+00:00'
+    modified: '2025-12-17T16:24:30.678087+00:00'
+    owner: nickarrow
+  SPECIFICATION.md:
+    checksum: 0eef6a782a007a9c850b37d76fc0a2a8717657a87643b06e43ce5f3f42c17aa6
+    created: '2025-12-17T16:24:30.678176+00:00'
+    modified: '2025-12-17T16:24:30.678176+00:00'
+    owner: nickarrow
