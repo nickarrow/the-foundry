@@ -23,7 +23,9 @@ from typing import Dict, List, Optional, Tuple
 
 # Constants
 REPO_ADMIN = "nickarrow"
-REGISTRY_PATH = ".foundry/registry.yml"
+GUARDIAN_REPO_PATH = os.environ.get("GUARDIAN_REPO_PATH", "guardian-repo")
+REGISTRY_PATH = f"{GUARDIAN_REPO_PATH}/registry.yml"
+GUARDIAN_PAT = os.environ.get("GUARDIAN_PAT", "")
 
 
 class FoundryEnforcer:
@@ -153,9 +155,9 @@ class FoundryEnforcer:
             return {'files': {}}
     
     def save_registry(self):
-        """Save the ownership registry to file"""
+        """Save the ownership registry to file in guardian repo"""
         try:
-            # Ensure .foundry directory exists
+            # Ensure guardian repo directory exists
             os.makedirs(os.path.dirname(REGISTRY_PATH), exist_ok=True)
             
             with open(REGISTRY_PATH, 'w', encoding='utf-8') as f:
@@ -164,9 +166,15 @@ class FoundryEnforcer:
                 f.write("# DO NOT EDIT MANUALLY - Managed automatically by the Foundry enforcement system.\n\n")
                 yaml.dump(self.registry, f, default_flow_style=False, sort_keys=True)
             
-            # Stage the registry
-            subprocess.run(['git', 'add', REGISTRY_PATH], check=True)
-            print(f"💾 Registry updated")
+            # Commit and push to guardian repo
+            subprocess.run(['git', '-C', GUARDIAN_REPO_PATH, 'add', 'registry.yml'], check=True)
+            subprocess.run(
+                ['git', '-C', GUARDIAN_REPO_PATH, 'commit', '-m', 'Update registry from enforcement'],
+                check=True
+            )
+            subprocess.run(['git', '-C', GUARDIAN_REPO_PATH, 'push'], check=True)
+            
+            print(f"💾 Registry updated in guardian repo")
         except Exception as e:
             print(f"❌ Error saving registry: {e}")
             raise
@@ -214,16 +222,10 @@ class FoundryEnforcer:
             parts = line.split('\t')
             status = parts[0]
             
-            # Special case: Always include registry.yml for validation
-            is_registry = (parts[1] == REGISTRY_PATH or 
-                          (status.startswith('R') and len(parts) > 2 and parts[2] == REGISTRY_PATH))
-            
-            if not is_registry:
-                # Skip hidden files/folders (including .github - protected by Guardian)
-                # Exception: .foundry/registry.yml is validated
-                path_parts = parts[1].split('/')
-                if any(p.startswith('.') for p in path_parts):
-                    continue
+            # Skip hidden files/folders (including .github and .foundry - protected by Guardian)
+            path_parts = parts[1].split('/')
+            if any(p.startswith('.') for p in path_parts):
+                continue
             
             if status.startswith('R'):  # Rename
                 old_path = parts[1]
@@ -277,25 +279,6 @@ class FoundryEnforcer:
         """Handle a newly added file"""
         path = file_info['path']
         
-        # Special case: registry.yml is always admin-owned
-        if path == REGISTRY_PATH:
-            # Check if this is an enforcement workflow commit
-            if self.is_enforcement_commit():
-                print(f"   ✅ Registry created by enforcement workflow")
-                return
-            
-            if self.commit_author.lower() != REPO_ADMIN.lower():
-                print(f"   ❌ Unauthorized creation of registry (only {REPO_ADMIN} can create)")
-                if os.path.exists(path):
-                    os.remove(path)
-                    subprocess.run(['git', 'add', path], check=True)
-                self.files_corrected.append(path)
-                self.corrections_made = True
-                return
-            else:
-                print(f"   ✅ Registry created by admin")
-                return
-        
         # Calculate checksum
         checksum = self.calculate_checksum(path)
         
@@ -317,22 +300,6 @@ class FoundryEnforcer:
     def handle_modified_file(self, file_info: Dict):
         """Handle a modified file"""
         path = file_info['path']
-        
-        # Special case: registry.yml is always admin-owned (hardcoded)
-        if path == REGISTRY_PATH:
-            # Check if this is an enforcement workflow commit
-            if self.is_enforcement_commit():
-                print(f"   ✅ Registry updated by enforcement workflow")
-                return
-            
-            if self.commit_author.lower() != REPO_ADMIN.lower():
-                print(f"   ❌ Unauthorized edit of registry (owner: {REPO_ADMIN}, editor: {self.commit_author})")
-                self.restore_file_from_history(path)
-                self.files_corrected.append(path)
-                self.corrections_made = True
-            else:
-                print(f"   ✅ Valid registry edit by admin")
-            return
         
         # Calculate current checksum
         current_checksum = self.calculate_checksum(path)
@@ -383,25 +350,6 @@ class FoundryEnforcer:
         old_path = file_info['old_path']
         new_path = file_info['path']
         
-        # Special case: registry.yml cannot be renamed
-        if old_path == REGISTRY_PATH or new_path == REGISTRY_PATH:
-            # Check if this is an enforcement workflow commit (shouldn't happen, but check anyway)
-            if self.is_enforcement_commit():
-                print(f"   ⚠️  Warning: Enforcement workflow renamed registry")
-                return
-            
-            if self.commit_author.lower() != REPO_ADMIN.lower():
-                print(f"   ❌ Unauthorized rename of registry (only {REPO_ADMIN} can rename)")
-                self.restore_file_from_history(old_path)
-                if os.path.exists(new_path):
-                    os.remove(new_path)
-                    subprocess.run(['git', 'add', new_path], check=True)
-                self.files_corrected.append(old_path)
-                self.corrections_made = True
-            else:
-                print(f"   ⚠️  Warning: Admin renamed registry file")
-            return
-        
         # Check if old file is in registry
         if old_path not in self.registry['files']:
             print(f"   ⚠️  Original file not in registry, treating as new")
@@ -451,22 +399,6 @@ class FoundryEnforcer:
     def handle_deletion(self, file_info: Dict):
         """Handle file deletion - restore if unauthorized"""
         path = file_info['path']
-        
-        # Special case: registry.yml cannot be deleted
-        if path == REGISTRY_PATH:
-            # Check if this is an enforcement workflow commit (shouldn't happen, but check anyway)
-            if self.is_enforcement_commit():
-                print(f"   ⚠️  Warning: Enforcement workflow deleted registry")
-                return
-            
-            if self.commit_author.lower() != REPO_ADMIN.lower():
-                print(f"   ❌ Unauthorized deletion of registry (only {REPO_ADMIN} can delete)")
-                self.restore_file_from_history(path)
-                self.files_corrected.append(path)
-                self.corrections_made = True
-            else:
-                print(f"   ⚠️  Warning: Admin deleted registry file")
-            return
         
         # Check if file is in registry
         if path not in self.registry['files']:
