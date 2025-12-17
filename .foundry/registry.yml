@@ -2,9 +2,4 @@
 # This file tracks ownership and integrity of all non-hidden files in the repository.
 # DO NOT EDIT MANUALLY - Managed automatically by the Foundry enforcement system.
 
-files:
-  Welcome.md:
-    checksum: ecd0dfb6b21143ff52cfe36f93636df57e5b21773c101491b86f10ce17556ca8
-    created: '2025-12-17T16:40:50.563085+00:00'
-    modified: '2025-12-17T16:40:50.563085+00:00'
-    owner: nickarrow
+files: {}
