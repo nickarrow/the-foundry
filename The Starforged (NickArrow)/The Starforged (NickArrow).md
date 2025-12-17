@@ -16,4 +16,6 @@ iron-vault-kind: campaign
 
 ---
 
-Welcome to your new campaign! This is a campaign index file, which marks its folder as a campaign. Any journals or game entities inside this folder will use this campaign for any mechanics or commands. You can replace all this text with any details or notes you have about your campaign. As long as the file properties remain the same, you don't have to worry about the contents of this file.
+The Starforged campaign is setup to be played in the standard Starforged setting, except it includes the recommended Sundered Isle's assets and a few Sundered Isles oracles that I think work really well in Starforged (Magnitude, size, weather, etc.). 
+
+Feel free to join in! I am about to start [[Barille Black]]'s 
