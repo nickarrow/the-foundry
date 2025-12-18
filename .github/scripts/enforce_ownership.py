@@ -222,12 +222,13 @@ class FoundryEnforcer:
             parts = line.split('\t')
             status = parts[0]
             
-            # Skip hidden files/folders (including .github and .foundry - protected by Guardian)
-            # Exception: .LICENSE file in root should be tracked
-            is_license_file = (parts[1] == '.LICENSE')
+            # Skip hidden files/folders (including .github - protected by Guardian)
+            # Exception: .foundry folder should be tracked (hidden from Obsidian but enforced)
+            file_path = parts[1]
+            is_foundry_folder = file_path.startswith('.foundry/')
             
-            if not is_license_file:
-                path_parts = parts[1].split('/')
+            if not is_foundry_folder:
+                path_parts = file_path.split('/')
                 if any(p.startswith('.') for p in path_parts):
                     continue
             
