@@ -1,9 +1,5 @@
----
-cssclasses:
-  - fountain
----
-# [[Barille 25.12.17 - Beginnings]]
-> This is the beginning of a great adventure...<
+# [[Barille 01 - Beginnings]]
+> This is the beginning of a great adventure...
 
 INT. LONG-RANGE TRANSPORT SHIP, RENTED CABIN
 [[Barille Black]] is sleeping on a stiff bed, wearing his dark blue suit and tie, loosened at the neck. He has dark curly hair, and the stubble of a beard. `ROLL CHARACTER GOAL` 
@@ -21,7 +17,6 @@ oracle name="[Character Oracles \/ Character Goal](datasworn:oracle_rollable:sta
 > Barille is on a transport ship. Not having an FTL capable ship of his own, he has to buy or barter his way to systems or sectors. He is already on a job, a posted job for the [[Risen Union]] (RU). The RU has a reputation of keeping its cards close to the vest, but the jobs pay well, even if they tend to come with little information and lead to more questions than answers. 
 > 
 > Barille has sworn a vow for this job, to [[Investigate and report on the rumored horrors of Reck]], and he means to see it through. 
-
 
 Barille is suddenly thrown out of his rented bed aboard the transport ship as the ship rocks violently. Either it is under attack or something catastrophic has happened. The damage is significant.
 
