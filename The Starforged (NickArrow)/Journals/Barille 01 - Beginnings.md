@@ -112,3 +112,26 @@ Yeaaaaaaaaaahh!
 
 
 Okay this is a test of the new inline mechanics. Barille fires at the lead ship, his engine, and ship coming alive simultaneously  `iv-move:Enter the Fray|Edge|3|1|0|3|3|move:starforged/combat/enter_the_fray` A strong hit with a match!! Let's go!!! Barille check's his radar, how many enemy ships are out there? `iv-oracle:Number|76|Many|oracle_rollable:sundered_isles/misc/magnitude/number` Oh boy... and Barille is flying solo. Even though he got the drop on them, this isn't good. Well, let's see if we can put some distance between them and us  `iv-move:Gain Ground|Wits|5|2|0|9|10|move:starforged/combat/gain_ground` ... Barille his the booster but then sees just as many in front of him as behind. Was this a trap?
+
+`iv-move:Strike|Edge|3|1|0|8|10|move:starforged/combat/strike` 
+
+`iv-move:Strike|Edge|3|1|0|7|8|move:starforged/combat/strike` 
+
+
+
+`iv-oracle:Likely|79|No|move.oracle_rollable:starforged/fate/ask_the_oracle.likely` 
+
+`iv-oracle:Creature First Look|63|Long-limbed|oracle_rollable:starforged/creature/first_look` 
+
+/iron
+
+```iron-vault-mechanics
+oracle-group name="NPC: Kiri “Brick” Stallard" {
+    oracle name="[Character Oracles \/ Character Name \/ Given Name](datasworn:oracle_rollable:starforged\/character\/name\/given_name)" result="Kiri" roll=56
+    oracle name="[Character Oracles \/ Character Name \/ Callsign](datasworn:oracle_rollable:starforged\/character\/name\/callsign)" result="Brick" roll=16
+    oracle name="[Character Oracles \/ Character Name \/ Family Name](datasworn:oracle_rollable:starforged\/character\/name\/family_name)" result="Stallard" roll=23
+    oracle name="[Character Oracles \/ First Look](datasworn:oracle_rollable:starforged\/character\/first_look)" result="Armed" roll=15
+    oracle name="[Character Oracles \/ Initial Disposition](datasworn:oracle_rollable:starforged\/character\/initial_disposition)" result="Suspicious" roll=44
+}
+```
+
