@@ -5,10 +5,10 @@
 ## What is The Foundry?
 
 **The Foundry** is a collaborative storytelling repository where players using **Obsidian + Iron Vault** can:
-- 📖 **Publish their entire campaign vault** - share your adventures with the community
-- 🔍 **Explore other campaigns** - read and discover the stories of fellow players
-- 🌍 **Build shared worlds** - contribute to campaigns and create interconnected narratives
-- 🤝 **Collaborate organically** - add characters, journals, and content to any campaign
+- **Publish their entire campaign vault** - share your adventures with the community
+- **Explore other campaigns** - read and discover the stories of fellow players
+- **Build shared worlds** - contribute to campaigns and create interconnected narratives
+- **Collaborate organically** - add characters, journals, and content to any campaign
 
 The Foundry uses automatic governance through GitHub Actions to manage permissions and ownership, making collaboration effortless and invisible.
 ## How It Works
