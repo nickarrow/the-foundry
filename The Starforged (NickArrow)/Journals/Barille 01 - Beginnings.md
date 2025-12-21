@@ -109,4 +109,28 @@ Yeaaaaaaaaaahh!
 > The first ship erupts, and before the others can react, the second one does too. These guys weren’t expecting a fight. Barille can’t quite get a shot on the third, which starts burning away. And then the frigate starts firing. Alarms are going off, missiles inbound, and this thing seems to have lots of guns. Barille burns and rolls the ship to evade. 
 > IN A BAD SPOT
 
-This is a test of the inline functionality. Let's start with just a simple make a a move command.  `iv-move:Face Danger|Heart|1|3|0|9|3|move:starforged/adventure/face_danger` 
+This is a test of the inline functionality. Let's start with just a simple make a a move command.  `iv-move:Face Danger|Heart|1|3|0|9|3|move:starforged/adventure/face_danger` Weak hit! So far so good. How about something with a strong hit?  `iv-move:Battle|Heart|3|3|5|4|6|move:starforged/combat/battle|adds=5(testing strong hit so a big add)` - yup. that worked. Looking green and looking good. Now a move with a miss,  `iv-move:Enter the Fray|Edge|1|1|0|10|9|move:starforged/combat/enter_the_fray` yup, looking good. The fact that it doesn't wrap text might be a bit of a problem on smaller screens. I'll have to see if word wrapping would work. Now let's test out a single oracle, will the word wrapping work?  `iv-oracle:Likely|63|Yes|move.oracle_rollable:starforged/fate/ask_the_oracle.likely` hey! That's nice. I like that optimizing. How about an NPC generator? Okay so a big NPC generator still opens in a big mechanic block. That's fine I think. what about create entity? Okay same thing. That's fine. 
+
+```iron-vault-mechanics
+oracle-group name="NPC: Brennan “Deuce” Barbosa" {
+    oracle name="[Character Oracles \/ Character Name \/ Given Name](datasworn:oracle_rollable:starforged\/character\/name\/given_name)" result="Brennan" roll=17
+    oracle name="[Character Oracles \/ Character Name \/ Callsign](datasworn:oracle_rollable:starforged\/character\/name\/callsign)" result="Deuce" roll=32
+    oracle name="[Character Oracles \/ Character Name \/ Family Name](datasworn:oracle_rollable:starforged\/character\/name\/family_name)" result="Barbosa" roll=63
+    oracle name="[Character Oracles \/ First Look](datasworn:oracle_rollable:starforged\/character\/first_look)" result="Attractive" roll=23
+    oracle name="[Character Oracles \/ Initial Disposition](datasworn:oracle_rollable:starforged\/character\/initial_disposition)" result="Wanting" roll=51
+}
+```
+
+
+
+```iron-vault-mechanics
+oracle-group name="NPC: Roland “Breaker” Kai" {
+    oracle name="[Character Oracles \/ Character Name \/ Given Name](datasworn:oracle_rollable:starforged\/character\/name\/given_name)" result="Roland" roll=81
+    oracle name="[Character Oracles \/ Character Name \/ Callsign](datasworn:oracle_rollable:starforged\/character\/name\/callsign)" result="Breaker" roll=15
+    oracle name="[Character Oracles \/ Character Name \/ Family Name](datasworn:oracle_rollable:starforged\/character\/name\/family_name)" result="Kai" roll=37
+    oracle name="[Character Oracles \/ First Look](datasworn:oracle_rollable:starforged\/character\/first_look)" result="Adorned" roll=7
+    oracle name="[Character Oracles \/ Initial Disposition](datasworn:oracle_rollable:starforged\/character\/initial_disposition)" result="Helpful" roll=4
+}
+```
+
+
