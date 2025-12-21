@@ -119,6 +119,18 @@ Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur luctus conseq
 
 
 
-`iv-move:Gather Information|Wits|3|2|2|9|1|move:starforged/adventure/gather_information|adds=1(Using my special asset bonus),1(Second add to show this works)` Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Aenean quis eros eget justo sagittis imperdiet. Nulla nec cursus lectus. Suspendisse libero sapien, luctus in ornare a, iaculis in nibh.  `iv-move:Enter the Fray|Heart|2|3|0|6|9|move:starforged/combat/enter_the_fray|burn=8:2`  Quisque condimentum consectetur purus at bibendum. Duis sollicitudin finibus mauris, vel semper enim ornare nec.  `iv-oracle:Combat Action|42|Leverage the terrain or surroundings|oracle_rollable:starforged/misc/combat_action` Maecenas et mi eu urna molestie rhoncus at vel ligula. Nulla gravida ante nisi, id pulvinar diam sodales et.  `iv-progress:Investigate and report on the rumored horrors of Reck|0|5|3`  Nam id justo at diam euismod eleifend ac eget arcu.
+`iv-move:Gather Information|Wits|3|2|2|9|1|move:starforged/adventure/gather_information|adds=1(Using my special asset bonus),1(Second add to show this works)` Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Aenean quis eros eget justo sagittis imperdiet. Nulla nec cursus lectus. Suspendisse libero sapien, luctus in ornare a, iaculis in nibh.  
+
+```iron-vault-mechanics
+move "[Begin a Session](datasworn:move:starforged\/session\/begin_a_session)"
+```
+
+
+
+```iron-vault-mechanics
+move "[Begin a Session](datasworn:move:starforged\/session\/begin_a_session)"
+```
+
+`iv-move:Enter the Fray|Heart|2|3|0|6|9|move:starforged/combat/enter_the_fray|burn=8:2`  Quisque condimentum consectetur purus at bibendum. Duis sollicitudin finibus mauris, vel semper enim ornare nec.  `iv-oracle:Combat Action|42|Leverage the terrain or surroundings|oracle_rollable:starforged/misc/combat_action` Maecenas et mi eu urna molestie rhoncus at vel ligula. Nulla gravida ante nisi, id pulvinar diam sodales et.  `iv-progress:Investigate and report on the rumored horrors of Reck|0|5|3`  Nam id justo at diam euismod eleifend ac eget arcu.
 
 /make
