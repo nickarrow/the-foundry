@@ -119,4 +119,5 @@ Now let's create some clocks.  `iv-clock-create:finish before lunch|The Starforg
 `iv-clock-advance:odds clock|The Starforged (NickArrow)/Clocks/Odds clock.md|0|2|2|odds=50 50:15:Yes` I think we should have shown the result
 
 
+
 Okay, how about meters.  `iv-meter:Momentum|2|4`  how about decrease  `iv-meter:Health|5|4` okay, again  `iv-meter:Spirit|5|4`  okay,  `iv-meter:Supply|5|4` okay,  `iv-meter:Momentum|4|3` okay great.  `iv-burn:3|2`  and how about initiative.  `iv-initiative:Position|out of combat|in control` and how about  `iv-initiative:Position|in control|in a bad spot` 
