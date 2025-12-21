@@ -115,10 +115,4 @@ Okay this is a test of the new inline mechanics. Barille fires at the lead ship,
 
 Was this a trap? Let's try a move with momentum  `iv-move:Strike|Edge|3|1|0|5|9|move:starforged/combat/strike|burn=8:2`  How about oracles inserted inline into text? Will this work?  `iv-oracle:Likely|97|No|move.oracle_rollable:starforged/fate/ask_the_oracle.likely` Ha! I beat the odds! How about the disposition of these attackers?  `iv-oracle:Initial Disposition|64|Desperate|oracle_rollable:starforged/character/initial_disposition` Yup. This is going to get messy. 
 
-`iv-move:Strike|Edge|4|1|3|1|1|move:starforged/combat/strike` 
-
-
-
-
-
-
+Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur luctus consequat consectetur. Nullam commodo ante nec ultrices sollicitudin. Aliquam eget dictum elit, et blandit orci. Donec dignissim eleifend mi, id pharetra ligula dignissim ac. Cras elementum nisi non mi rutrum fringilla. Nunc commodo augue ante, eu rutrum est pretium eget. Aenean ornare porta porttitor. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Aenean quis eros eget justo sagittis imperdiet. Nulla nec cursus lectus. Suspendisse libero sapien, luctus in ornare a, iaculis in nibh. Quisque condimentum consectetur purus at bibendum. Duis sollicitudin finibus mauris, vel semper enim ornare nec. Maecenas et mi eu urna molestie rhoncus at vel ligula. Nulla gravida ante nisi, id pulvinar diam sodales et. Nam id justo at diam euismod eleifend ac eget arcu.
