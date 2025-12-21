@@ -115,21 +115,11 @@ Okay this is a test of the new inline mechanics. Barille fires at the lead ship,
 
 Was this a trap? Let's try a move with momentum  `iv-move:Strike|Edge|3|1|0|5|9|move:starforged/combat/strike|burn=8:2`  How about oracles inserted inline into text? Will this work?  `iv-oracle:Likely|97|No|move.oracle_rollable:starforged/fate/ask_the_oracle.likely` Ha! I beat the odds! How about the disposition of these attackers?  `iv-oracle:Initial Disposition|64|Desperate|oracle_rollable:starforged/character/initial_disposition` Yup. This is going to get messy. 
 
-Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur luctus consequat consectetur. Nullam commodo ante nec ultrices sollicitudin.  `iv-move:Battle|Heart|1|3|0|9|9|move:starforged/combat/battle` Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur luctus consequat consectetur. Nullam commodo  `iv-oracle:Creature First Look|30|Distinctive smell|oracle_rollable:starforged/creature/first_look`  ante nec ultrices sollicitudin. Aliquam eget dictum elit, et blandit orci. Donec dignissim eleifend mi, id pharetra ligula dignissim ac. `iv-oracle:Shipwreck Details|70|Ruined supplies or provisions|oracle_rollable:sundered_isles/shipwreck/details|cursed=7`  Cras elementum nisi non mi rutrum fringilla. Nunc commodo augue ante, eu rutrum est pretium eget.  `iv-move:Compel|Shadow|6|1|0|2|3|move:starforged/adventure/compel`Aenean ornare porta porttitor. 
+Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur luctus consequat consectetur. Nullam commodo ante nec ultrices sollicitudin.  `iv-move:Battle|Heart|1|3|0|9|9|move:starforged/combat/battle` Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur luctus consequat consectetur. Nullam commodo  `iv-oracle:Creature First Look|30|Distinctive smell|oracle_rollable:starforged/creature/first_look`  ante nec ultrices sollicitudin.  `iv-noroll:Begin a Session|move:starforged/session/begin_a_session`  this is what we did. Aliquam eget dictum elit, et blandit orci. Donec dignissim eleifend mi, id pharetra ligula dignissim ac. `iv-oracle:Shipwreck Details|70|Ruined supplies or provisions|oracle_rollable:sundered_isles/shipwreck/details|cursed=7`  Cras elementum nisi non mi rutrum fringilla. Nunc commodo augue ante, eu rutrum est pretium eget.  `iv-move:Compel|Shadow|6|1|0|2|3|move:starforged/adventure/compel`Aenean ornare porta porttitor. 
 
 
 
 `iv-move:Gather Information|Wits|3|2|2|9|1|move:starforged/adventure/gather_information|adds=1(Using my special asset bonus),1(Second add to show this works)` Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Aenean quis eros eget justo sagittis imperdiet. Nulla nec cursus lectus. Suspendisse libero sapien, luctus in ornare a, iaculis in nibh.  
-
-```iron-vault-mechanics
-move "[Begin a Session](datasworn:move:starforged\/session\/begin_a_session)"
-```
-
-
-
-```iron-vault-mechanics
-move "[Begin a Session](datasworn:move:starforged\/session\/begin_a_session)"
-```
 
 `iv-move:Enter the Fray|Heart|2|3|0|6|9|move:starforged/combat/enter_the_fray|burn=8:2`  Quisque condimentum consectetur purus at bibendum. Duis sollicitudin finibus mauris, vel semper enim ornare nec.  `iv-oracle:Combat Action|42|Leverage the terrain or surroundings|oracle_rollable:starforged/misc/combat_action` Maecenas et mi eu urna molestie rhoncus at vel ligula. Nulla gravida ante nisi, id pulvinar diam sodales et.  `iv-progress:Investigate and report on the rumored horrors of Reck|0|5|3`  Nam id justo at diam euismod eleifend ac eget arcu.
 
