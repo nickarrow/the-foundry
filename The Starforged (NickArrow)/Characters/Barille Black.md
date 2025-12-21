@@ -2,15 +2,15 @@
 name: Barille Black
 xp_spent: 0
 xp_added: 0
-momentum: 4
+momentum: 2
 edge: 1
 heart: 3
 iron: 2
 shadow: 1
 wits: 2
-health: 5
-spirit: 5
-supply: 5
+health: 4
+spirit: 4
+supply: 4
 Quests_Progress: 0
 Quests_XPEarned: 0
 Bonds_Progress: 0
@@ -44,6 +44,7 @@ assets:
       - false
     controls: {}
     options: {}
+initiative: false
 ---
 ![[barille black profile.png|center|100]] 
 ```iron-vault-character-meters

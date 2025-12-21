@@ -1,12 +1,13 @@
 ---
-name: Complete the inline feature
-rank: formidable
-progress: 12
+name: Do this new thing
+rank: dangerous
+progress: 0
 tags:
   - incomplete
-track-type: Vow
+track-type: Combat
 character: "[[The Starforged (NickArrow)/Characters/Barille Black.md]]"
 iron-vault-kind: progress
+
 ---
 
 
