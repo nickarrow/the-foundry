@@ -2,12 +2,8 @@
 > This is the beginning of a great adventure...
 
 INT. LONG-RANGE TRANSPORT SHIP, RENTED CABIN
-[[Barille Black]] is sleeping on a stiff bed, wearing his dark blue suit and tie, loosened at the neck. He has dark curly hair, and the stubble of a beard.    `iv-oracle:Character Goal|93|Roll twice|oracle_rollable:starforged/character/goal` 
-
-`iv-oracle:Character Goal|83|[Action](datasworn:oracle_rollable:starforged/core/action) + [Theme](datasworn:oracle_rollable:starforged/core/theme)|oracle_rollable:starforged/character/goal`  
-
-`iv-oracle:Character Goal|83|[Action](datasworn:oracle_rollable:starforged/core/action) + [Theme](datasworn:oracle_rollable:starforged/core/theme)|oracle_rollable:starforged/character/goal`  
-
+[[Barille Black]] is sleeping on a stiff bed, wearing his dark blue suit and tie, loosened at the neck. He has dark curly hair, and the stubble of a beard.  
+/
 
 
 `ROLL CHARACTER GOAL` 
