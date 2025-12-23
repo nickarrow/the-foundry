@@ -32,26 +32,13 @@ Barille reaches into his pocket and flips a black iron coin. He catches it and t
 BARILLE
 On this iron I swear to  `iv-move:Swear an Iron Vow|Heart|3|3|0|9|5|move:starforged/quest/swear_an_iron_vow`  `iv-track-create:Fend off attackers until the transport can escape|The Starforged (NickArrow)/Progress/Barille/Fend off attackers until the transport can escape.md` 
 
-> Okay - not sure who these hostiles are, nor why they’d be going after us? Straight up piracy? Going to need to deal with the immediate, and very explody, problem - and then figure out who is actually attacking transport ships out here.
+> Okay - not sure who these hostiles are, nor why they’d be going after us? Straight up piracy? Going to need to deal with the immediate, and very explody, problem - and then figure out who is actually attacking transport ships out here. 
 
-Barille pulls up the UI from his hand terminal, and initiates the pre-launch sequence for his snub fighter. Green check marks. Great, let’s get there. Barille takes off to the hanger bay. 
+Barille pulls up the UI from his hand terminal, and initiates the pre-launch sequence for his snub fighter. Green check marks. Great, let’s get there. Barille takes off to the hanger bay. Does he get there without issue? `iv-oracle:50/50|30|Yes|move.oracle_rollable:starforged/fate/ask_the_oracle.fifty_fifty` The ship rocks a bit, sounds like the transport pilot is making moves, but no major new strikes. 
 
-```iron-vault-mechanics
-- "Does he get there without issue?" {
-    oracle name="[Ask the Oracle \/ 50\/50](datasworn:move.oracle_rollable:starforged\/fate\/ask_the_oracle.fifty_fifty)" result="Yes" roll=30
-}
-```
+Barille jumps into his SN-27 snub fighter, the engines are already humming. He punches the launch control and blasts out into the void.
 
-The ship rocks a bit, sounds like the transport pilot is making moves, but no major new strikes. Strapped into SN-27, the engines are humming, he punches the launch control and blasts out into the void. 
-
-```iron-vault-mechanics
-actor name="[[Campaigns\/The Starforged\/Characters\/Barille Black\/Barille Black.md|Barille Black]]" {
-    move "[Enter the Fray](datasworn:move:starforged\/combat\/enter_the_fray)" {
-        roll "Snub Fighter \/ Integrity" action=4 adds=0 stat=4 vs1=4 vs2=9
-    }
-}
-```
-With a roll of the controls, Barille sees the immediate forces. Looks like a large frigate with at least 3 fighters circling. The transport ship is putting on a significant burn, and there are no other friendlies. 
+`iv-move:Enter the Fray|Snub Fighter / Integrity|5|4|0|10|3|move:starforged/combat/enter_the_fray`  With a roll of the controls, Barille sees the immediate forces. Looks like a large frigate with at least 3 fighters circling. The transport ship is putting on a significant burn, and there are no other friendlies. 
 
 BARILLE
 Let’s see how good their scans are. 
