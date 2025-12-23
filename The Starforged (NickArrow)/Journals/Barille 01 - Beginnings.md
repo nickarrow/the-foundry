@@ -4,6 +4,10 @@
 INT. LONG-RANGE TRANSPORT SHIP, RENTED CABIN
 [[Barille Black]] is sleeping on a stiff bed, wearing his dark blue suit and tie, loosened at the neck. He has dark curly hair, and the stubble of a beard.  
 
+`iv-oracle:Starship Name|92|Tormentor|oracle_rollable:starforged/starship/starship_name` 
+
+`iv-oracle:Character Goal|92|Action + Theme, Build a home, Seek redemption|oracle_rollable:starforged/character/goal` 
+
 
 
 
