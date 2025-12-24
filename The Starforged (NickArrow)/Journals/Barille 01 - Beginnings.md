@@ -45,12 +45,9 @@ Let’s see how good their scans are.
 
 Barille shields the engines, blocks EM, and goes ballistic with a burst of RCS to set up an ambush for the returning fighters.  `iv-move:Gain Ground|Shadow|5|1|0|3|4|move:starforged/combat/gain_ground` They have no idea. 
 
-This seems like a small time raid, and under normal circumstances, it would have been successful. Not today fellas.
-
-> Barille fires at the lead ship, his engine, and ship coming alive simultaneously.   `iv-move:Strike|Edge|3|1|1|9|6|move:starforged/combat/strike|burn=7:2|adds=1(ambush)` 
+> This seems like a small time raid, and under normal circumstances, it would have been successful. Not today fellas. Barille fires at the lead ship, his engine, and ship coming alive simultaneously.   `iv-move:Strike|Edge|3|1|1|9|6|move:starforged/combat/strike|burn=7:2|adds=1(ambush)` 
 
 BARILLE BLACK
 ahhhhHHHHHHH! 
 
-> The first ship erupts, and before the others can react, the second one does too. These guys weren’t expecting a fight. Barille can’t quite get a shot on the third, which starts burning away. And then the frigate starts firing. Alarms are going off, missiles inbound, and this thing seems to have lots of guns. Barille burns and rolls the ship to evade. 
-> IN A BAD SPOT
+The first ship erupts, and before the others can react, the second one does too. These guys weren’t expecting a fight. Barille can’t quite get a shot on the third, which starts burning away. And then the frigate starts firing. Alarms are going off, missiles inbound, and this thing seems to have lots of guns. Barille burns and rolls the ship to evade. 
