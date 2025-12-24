@@ -15,6 +15,7 @@ ironvault:
 iron-vault-kind: campaign
 
 ---
+
 # [[The Starforged (NickArrow)]]
 This campaign campaign is setup to be played in the standard Starforged setting, except it includes the recommended Sundered Isle's assets and a few Sundered Isles oracles that I think work really well in Starforged (Magnitude, size, weather, etc.). 
 

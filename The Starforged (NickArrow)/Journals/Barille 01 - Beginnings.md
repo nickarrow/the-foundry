@@ -2,7 +2,7 @@
 > This is the beginning of a great adventure...
 
 INT. LONG-RANGE TRANSPORT SHIP, RENTED CABIN
-[[Barille Black]] is sleeping on a stiff bed, wearing his dark blue suit and tie, loosened at the neck. He has dark curly hair, and the stubble of a beard. `iv-oracle:Character Goal|91|Gain Riches, Seek Power|oracle_rollable:starforged/character/goal` 
+`iv-noroll:Begin a Session|move:starforged/session/begin_a_session`  [[Barille Black]] is sleeping on a stiff bed, wearing his dark blue suit and tie, loosened at the neck. He has dark curly hair, and the stubble of a beard. `iv-oracle:Character Goal|91|Gain Riches, Seek Power|oracle_rollable:starforged/character/goal` 
 
 Growing up within the domain of a founder clan, the [[Circle of the Elder Stars]], Barille's childhood was difficult. Not being of notable bloodline meant that he was relegated to the lower ranks of the Circle's caste system. However, his ability to fight, endure, and complete jobs earned him a reputation that helped elevate his status. Working jobs meant that he was able to grow his reputation, which provided access to bigger and better jobs. Barille has since left the Circle, for reasons unknown, and is currently adrift in the sector [[Devil's Chain]], moving from job to job. 
 
@@ -47,20 +47,10 @@ Barille shields the engines, blocks EM, and goes ballistic with a burst of RCS t
 
 This seems like a small time raid, and under normal circumstances, it would have been successful. Not today fellas.
 
-> Barille fires at the lead ship, his engine, and ship coming alive simultaneously.  Hello
-
-```iron-vault-mechanics
-actor name="[[Campaigns\/The Starforged\/Characters\/Barille Black\/Barille Black.md|Barille Black]]" {
-    move "[Strike](datasworn:move:starforged\/combat\/strike)" {
-        add 1 "ambush"
-        roll "Edge" action=2 adds=1 stat=1 vs1=4 vs2=9
-        burn from=7 to=2
-    }
-}
-```
+> Barille fires at the lead ship, his engine, and ship coming alive simultaneously.   `iv-move:Strike|Edge|3|1|1|9|6|move:starforged/combat/strike|burn=7:2|adds=1(ambush)` 
 
 BARILLE BLACK
-Yeaaaaaaaaaahh! 
+ahhhhHHHHHHH! 
 
 > The first ship erupts, and before the others can react, the second one does too. These guys weren’t expecting a fight. Barille can’t quite get a shot on the third, which starts burning away. And then the frigate starts firing. Alarms are going off, missiles inbound, and this thing seems to have lots of guns. Barille burns and rolls the ship to evade. 
 > IN A BAD SPOT
