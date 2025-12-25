@@ -12,5 +12,4 @@
 [[Circle of the Elder Stars]] may or may not be present, they are certainly not based here. 
 
 **Sector Map**
-
 ![[Map - Devil's Chain.excalidraw]]
