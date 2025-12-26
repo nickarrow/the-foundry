@@ -4,7 +4,7 @@
 
 ## What is Epistolary Play?
 
-Epistolary play is a style of collaborative storytelling where multiple players contribute to a shared narrative through **letters, messages, or journal entries** written in-character. Each player plays their own game, pursues their own adventures, but periodically writes a letter that advances a **Shared Vow** — a goal that spans the entire campaign and connects everyone's stories.
+Epistolary play is a style of collaborative storytelling where multiple players contribute to a shared narrative through **letters, messages, or journal entries** written in-character. Each player plays their own game, pursues their own adventures, but periodically writes a **Spotlight Letter** — a meaningful contribution to the shared story that connects to a **Shared Vow** spanning the entire campaign.
 
 This format works beautifully with The Foundry's ownership model: you own your letters, others own theirs, and the shared narrative grows organically through addition.
 
@@ -19,14 +19,16 @@ This format works beautifully with The Foundry's ownership model: you own your l
 ### The Core Loop
 
 1. **Play your game.** Run your character through adventures, vows, and encounters as you normally would.
-2. **Write a letter.** When your character does something that advances the Shared Vow, write an in-character letter describing what happened.
-3. **Mark progress.** The Organizer marks progress on the Shared Vow. Other players can take note of the nature of progress, including any story elements or impacts.
-4. **Wait your turn.** You can't mark progress twice in a row — someone else must contribute before you write another progress-marking letter.
+2. **Write a Spotlight Letter.** When you have something meaningful to share — a milestone on the Shared Vow or a narrative moment worth telling — write an in-character letter describing what happened.
+3. **Mark progress (if applicable).** If your letter represents a milestone, the Organizer marks progress on the Shared Vow.
+4. **Wait your turn.** You can't write two Spotlight Letters in a row — someone else must write before you can contribute again.
 5. **Repeat.** Keep playing, keep writing, watch the shared story unfold.
 
 ### The Shared Vow
 
 Every Epistolary campaign has a **Shared Vow** — a significant goal that multiple characters across multiple locations are working toward. This vow responds to **The Trouble**, a threat or situation affecting the entire region.
+
+The Shared Vow exists to connect many independent stories together — it is not the only thing you should pursue. You are encouraged to swear personal vows and chase them alongside the shared one. Your character's own goals, relationships, and adventures are the heart of your game. The Shared Vow is the thread that weaves everyone's stories into something larger.
 
 The Shared Vow is owned by the Organizer, who tracks progress based on player letters. You can't edit the vow file directly (The Foundry prevents that), but your letters drive its progress.
 
@@ -40,9 +42,18 @@ The Shared Vow is owned by the Organizer, who tracks progress based on player le
 - *Trouble:* A cursed fleet is preying on trade routes throughout the isles
     - *Shared Vow:* "Hunt down the fleet and end their reign of terror" (Extreme)
 
-### Writing Letters
+### How to Join
 
-Your letters are written in-character. They might be:
+1. **Create your character.** Use Iron Vault to create a new character in the campaign. Build them however you like — the Organizer may have setting guidance, but your character is yours.
+2. **Subscribe to the Shared Vow.** Find the Shared Vow in the campaign and incorporate it into your new character. The shared vow should have meaning to your character and help drive their actions.
+3. **Start playing.** Run your character through adventures, pursue personal vows, and engage with the world.
+4. **Write your first Spotlight Letter.** When you have something to share — a milestone on the Shared Vow or a narrative moment worth telling — write a letter and drop it in the Epistolary folder.
+
+That's it. You're in.
+
+### Writing Spotlight Letters
+
+Your Spotlight Letters are written in-character. They might be:
 - An actual letter to another character or faction
 - A journal entry or captain's log
 - A report to a contact or superior
@@ -52,21 +63,26 @@ Your letters are written in-character. They might be:
 **What to include:**
 - What happened — the events, encounters, and outcomes
 - How it connects to The Trouble and the Shared Vow
-- Whether you're marking progress (did your efforts succeed?)
 
 **What you don't need:**
 - A specific format — write however fits your character
 - Mechanical details — focus on the narrative, not the dice
 
-### The Pacing Rule
+### The Spotlight Rule
 
-**You cannot mark progress on the Shared Vow twice in a row.**
+Some Spotlight Letters mark progress on the Shared Vow (when you've reached a milestone); others enrich the story without advancing the track. Both matter. Both count.
 
-After you write a letter marking progress on the Shared Vow, you must wait until another player marks progress before you can do so again. This prevents any single player from dominating the shared narrative and ensures everyone gets to contribute.
+**The core constraint:**
+
+> You cannot write two Spotlight Letters in a row. After you post a letter, wait until another player posts one before writing again.
+
+This ensures everyone gets their turn in the spotlight and prevents any single player from dominating the shared narrative — whether through progress or pure storytelling. It's not a strict turn order; it's a rhythm of shared writing.
+
+**When does a letter mark progress?** When you've reached a milestone on the Shared Vow — use the *Reach a Milestone* move as your guide. Progress represents meaningful change, not just effort.
 
 You can still:
 - Play your own game as much as you want
-- Pursue your own side questsions, personal vows, and adventures
+- Pursue your own side quests, personal vows, and adventures
 
 ### The "Yes, and..." Philosophy
 
@@ -96,7 +112,7 @@ The requirement that the track be full (rather than just having enough progress 
 
 Letters are typically stored in `Lore/Epistolary/` within the campaign folder. Check with your Organizer for the specific location.
 
-The Shared Vow file will be in the campaign's Progress folder, owned by the Organizer.
+The Shared Vow file will usually be in the campaign's Progress folder, owned by the Organizer.
 
 ---
 
@@ -184,10 +200,9 @@ Write a campaign introduction that includes:
 
 **Your ongoing responsibilities:**
 1. **Monitor letters** — Read new letters as they come in
-2. **Track progress** — Update the Shared Vow when letters mark progress
-3. **Track turns** — Note who marked progress last (they can't mark again until someone else does)
-4. **Maintain context** — Keep the campaign docs updated if needed
-5. **Facilitate the endgame** — When the track is full, make the Fulfill Your Vow move and invite final letters
+2. **Track progress** — Update the Shared Vow when letters mark progress (milestones)
+3. **Maintain context** — Keep the campaign docs updated if needed
+4. **Facilitate the endgame** — When the track is full, make the Fulfill Your Vow move and invite final letters
 
 **You don't need to:**
 - Approve letters before they're posted
@@ -206,7 +221,7 @@ Write a campaign introduction that includes:
 | Letters | Individual players | Lore/Epistolary/ |
 | Character files | Individual players | Characters folder |
 
-**The Pacing Rule:** Can't mark progress twice in a row. Wait for someone else.
+**The Spotlight Rule:** Can't write two Spotlight Letters in a row. Wait for someone else.
 
 **The Endgame Rule:** Fulfill Your Vow only when the track is full. Each player gets a final letter.
 

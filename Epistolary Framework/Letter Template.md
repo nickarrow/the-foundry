@@ -1,4 +1,4 @@
-# Letter Template
+# Spotlight Letter Template
 
 > This template is optional. Write however fits your character.
 
@@ -19,7 +19,7 @@
 
 ---
 
-**Milestone:** *[Brief note about what milestone was reached]*
+**Progress:** [Yes/No — Use the *Reach a Milestone* move as your guide.]
 ```
 
 ---
@@ -47,7 +47,7 @@ Morrow out.
 
 ---
 
-**Milestone:** *Recovered critical data about the Union's activities.*
+**Progress:** *Yes — Recovered critical data about the Union's activities.*
 ```
 
 ---
@@ -78,7 +78,7 @@ We need answers.
 
 ---
 
-**Milestone:** *Discovered the source of the blight.*
+**Progress:** *Yes — Discovered the source of the blight.*
 ```
 
 ---
@@ -107,7 +107,7 @@ We found where they anchor. A hidden cove on the far side of the Shattered Reef,
 
 ---
 
-**Milestone:** *Located the ghost fleet's anchorage.*
+**Progress:** *Yes — Located the ghost fleet's anchorage.*
 ```
 
 ---
