@@ -2,6 +2,8 @@
 
 > A framework for collaborative, asynchronous storytelling in The Foundry
 
+I've always wanted to try asynchronous Ironsworn, and Epistolary games have also always fascinated me. This is a TOTALLY optional framework for playing an Epistolary version of Ironsworn, Starforged, or Sundered Isles. You most certainly can ignore this and just create your own campaign (or go play in someone else's), but it is here if you are interested.
+
 ## What is Epistolary Play?
 
 Epistolary play is a style of collaborative storytelling where multiple players contribute to a shared narrative through **letters, messages, or journal entries** written in-character. Each player plays their own game, pursues their own adventures, but periodically writes a **Spotlight Letter** — a meaningful contribution to the shared story that connects to a **Shared Vow** spanning the entire campaign.
