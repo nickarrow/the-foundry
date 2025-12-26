@@ -44,7 +44,7 @@ assets:
       - false
     controls: {}
     options: {}
-initiative: true
+initiative: false
 ---
 ![[barille black profile.png|center|100]] 
 ```iron-vault-character-meters

@@ -27,10 +27,10 @@ We're under attack, someone's shooting!
  
 > Yeah, this is not ideal. This is a transport, not a warship. Not wanting to explode, 
 
-Barille reaches into his pocket and flips a black iron coin. He catches it and then says to himself.
+Barille reaches into his pocket and flips a black iron coin. He catches it.
 
 BARILLE
-On this iron I swear to  `iv-move:Swear an Iron Vow|Heart|3|3|0|9|5|move:starforged/quest/swear_an_iron_vow`  `iv-track-create:Fend off attackers until the transport can escape|The Starforged (NickArrow)/Progress/Barille/Fend off attackers until the transport can escape.md` 
+Get a message to your captain to burn like hell. I'll see if I can hold them off. NOW GO!
 
 > Okay - not sure who these hostiles are, nor why they’d be going after us? Straight up piracy? Going to need to deal with the immediate, and very explody, problem - and then figure out who is actually attacking transport ships out here. 
 
@@ -38,19 +38,19 @@ Barille pulls up the UI from his hand terminal, and initiates the pre-launch seq
 
 Barille jumps into his SN-27 snub fighter, the engines are already humming. He punches the launch control and blasts out into the void.
 
-`iv-move:Enter the Fray|Snub Fighter / Integrity|5|4|0|10|3|move:starforged/combat/enter_the_fray` `iv-initiative:Position|in control|in control`  With a roll of the controls, Barille sees the immediate forces. Looks like a large frigate with at least 3 fighters circling. The transport ship is putting on a significant burn, and there are no other friendlies. Not great odds, but Barille might be able to catch them by surprise. 
+`iv-move:Enter the Fray|Snub Fighter / Integrity|5|4|0|10|3|move:starforged/combat/enter_the_fray` `iv-initiative:Position|in control|in control`  `iv-track-create:Fend off attackers until the transport can escape|The Starforged (NickArrow)/Progress/Barille/Fend off attackers until the transport can escape.md` With a roll of the controls, Barille sees the immediate forces. Looks like a large frigate with at least 3 fighters circling. The transport ship is putting on a significant burn, and there are no other friendlies. Not great odds, but Barille might be able to catch them by surprise. 
 
 BARILLE
 Let’s see how good their scans are. 
 
 Barille shields the engines, blocks EM, and goes ballistic with a burst of RCS to set up an ambush for the returning fighters.  `iv-move:Gain Ground|Shadow|5|1|0|3|4|move:starforged/combat/gain_ground` They have no idea. 
 
-> This seems like a small time raid, and under normal circumstances, it would have been successful. Not today fellas. Barille fires at the lead ship, his engine, and ship coming alive simultaneously.   `iv-move:Strike|Edge|3|1|1|9|6|move:starforged/combat/strike|burn=7:2|adds=1(ambush)` 
+> This seems like a small time raid, and under normal circumstances, it would have been successful. Not today fellas. Barille fires at the lead ship, his engine, and ship coming alive simultaneously.   `iv-move:Strike|Edge|3|1|1|9|6|move:starforged/combat/strike|burn=7:2|adds=1(ambush)`  `iv-initiative:Position|in control|in a bad spot` 
 
 BARILLE BLACK
 ahhhhHHHHHHH! 
 
-The first ship erupts, and before the others can react, the second one does too. These guys weren’t expecting a fight. Barille can’t quite get a shot on the third, which starts burning away. And then the frigate starts firing. Alarms are going off, missiles inbound, and this thing seems to have lots of guns. Barille burns and rolls the ship to evade. 
+The first ship erupts, and before the others can react, the second one does too. These guys weren’t expecting a fight. Barille can’t quite get a shot on the third, which starts burning away.... And then the frigate starts firing. Alarms are going off, missiles inbound, and this thing seems to have lots of guns. Barille burns and rolls the ship to evade.
 
 
 

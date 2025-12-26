@@ -4,8 +4,8 @@ rank: dangerous
 progress: 24
 tags:
   - incomplete
-track-type: Vow
-character: "[[The Starforged (NickArrow)/Characters/Barille Black.md]]"
+track-type: Combat
+character: Barille Black
 iron-vault-kind: progress
 ---
 

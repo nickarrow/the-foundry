@@ -5,9 +5,8 @@ progress: 0
 tags:
   - incomplete
 track-type: Vow
-character: "[[The Starforged (NickArrow)/Characters/Barille Black.md]]"
+character: Barille Black
 iron-vault-kind: progress
-
 ---
 
 
