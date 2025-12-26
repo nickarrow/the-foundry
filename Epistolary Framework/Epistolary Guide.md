@@ -6,13 +6,13 @@ I've always wanted to try asynchronous Ironsworn, and Epistolary games have also
 
 ## What is Epistolary Play?
 
-Epistolary play is a style of collaborative storytelling where multiple players contribute to a shared narrative through **letters, messages, or journal entries** written in-character. Each player plays their own game, pursues their own adventures, but periodically writes a **Spotlight Letter** — a meaningful contribution to the shared story that connects to a **Shared Vow** spanning the entire campaign.
+Epistolary play is a style of collaborative storytelling where multiple players contribute to a shared narrative through **letters, messages, or journal entries** written in-character. Each player plays their own game, pursues their own adventures, but periodically writes a **Spotlight Letter**, a meaningful contribution to the shared story that connects to a **Shared Vow** spanning the entire campaign.
 
 This format works beautifully with The Foundry's ownership model: you own your letters, others own theirs, and the shared narrative grows organically through addition.
 
 **This guide covers:**
-- For-Players — How to join and play in an Epistolary campaign
-- For Organizers — How to set up and run an Epistolary campaign
+- For Players - How to join and play in an Epistolary campaign
+- For Organizers - How to set up and run an Epistolary campaign
 
 ---
 
@@ -28,9 +28,9 @@ This format works beautifully with The Foundry's ownership model: you own your l
 
 ### The Shared Vow
 
-Every Epistolary campaign has a **Shared Vow** — a significant goal that multiple characters across multiple locations are working toward. This vow responds to **The Trouble**, a threat or situation affecting the entire region.
+Every Epistolary campaign has a **Shared Vow**, a significant goal that multiple characters across multiple locations are working toward. This vow responds to **The Trouble**, a threat or situation affecting the entire region.
 
-The Shared Vow exists to connect many independent stories together — it is not the only thing you should pursue. You are encouraged to swear personal vows and chase them alongside the shared one. Your character's own goals, relationships, and adventures are the heart of your game. The Shared Vow is the thread that weaves everyone's stories into something larger.
+The Shared Vow exists to connect many independent stories together, it is not the only thing you should pursue. You are encouraged to swear personal vows and chase them alongside the shared one. Your character's own goals, relationships, and adventures are the heart of your game. The Shared Vow is the thread that weaves everyone's stories into something larger.
 
 The Shared Vow is owned by the Organizer, who tracks progress based on player letters. You can't edit the vow file directly (The Foundry prevents that), but your letters drive its progress.
 
@@ -46,10 +46,10 @@ The Shared Vow is owned by the Organizer, who tracks progress based on player le
 
 ### How to Join
 
-1. **Create your character.** Use Iron Vault to create a new character in the campaign. Build them however you like — the Organizer may have setting guidance, but your character is yours.
+1. **Create your character.** Use Iron Vault to create a new character in the campaign. Build them however you like. The Organizer may have setting guidance, but your character is yours.
 2. **Subscribe to the Shared Vow.** Find the Shared Vow in the campaign and incorporate it into your new character. The shared vow should have meaning to your character and help drive their actions.
 3. **Start playing.** Run your character through adventures, pursue personal vows, and engage with the world.
-4. **Write your first Spotlight Letter.** When you have something to share — a milestone on the Shared Vow or a narrative moment worth telling — write a letter and drop it in the Epistolary folder.
+4. **Write your first Spotlight Letter.** When you have something to share, a milestone on the Shared Vow or a narrative moment worth telling, write a letter and drop it in the Epistolary folder.
 
 That's it. You're in.
 
@@ -63,12 +63,12 @@ Your Spotlight Letters are written in-character. They might be:
 - A recording transmitted across the void
 
 **What to include:**
-- What happened — the events, encounters, and outcomes
+- What happened, the events, encounters, and outcomes
 - How it connects to The Trouble and the Shared Vow
 
 **What you don't need:**
-- A specific format — write however fits your character
-- Mechanical details — focus on the narrative, not the dice
+- A specific format, write however fits your character
+- Mechanical details, focus on the narrative, not the dice
 
 ### The Spotlight Rule
 
@@ -78,9 +78,9 @@ Some Spotlight Letters mark progress on the Shared Vow (when you've reached a mi
 
 > You cannot write two Spotlight Letters in a row. After you post a letter, wait until another player posts one before writing again.
 
-This ensures everyone gets their turn in the spotlight and prevents any single player from dominating the shared narrative — whether through progress or pure storytelling. It's not a strict turn order; it's a rhythm of shared writing.
+This ensures everyone gets their turn in the spotlight and prevents any single player from dominating the shared narrative, whether through progress or pure storytelling. It's not a strict turn order, it's a rhythm of shared writing.
 
-**When does a letter mark progress?** When you've reached a milestone on the Shared Vow — use the *Reach a Milestone* move as your guide. Progress represents meaningful change, not just effort.
+**When does a letter mark progress?** When you've reached a milestone on the Shared Vow, use the *Reach a Milestone* move as your guide. Progress represents meaningful change, not just effort.
 
 You can still:
 - Play your own game as much as you want
@@ -123,12 +123,12 @@ The Shared Vow file will usually be in the campaign's Progress folder, owned by 
 ### What You're Setting Up
 
 As the Organizer, you're creating the stage for collaborative play:
-- **The Campaign** — The world, setting, and context
-- **The Trouble** — The threat that spans your region
-- **The Shared Vow** — The goal players are working toward
-- **The Infrastructure** — Folders, files, and documentation
+- **The Campaign** - The world, setting, and context
+- **The Trouble** - The threat that spans your region
+- **The Shared Vow** - The goal players are working toward
+- **The Infrastructure** - Folders, files, and documentation
 
-You don't control the story — you facilitate it. Players drive the narrative through their letters; you track progress and maintain the shared elements.
+You don't control the story - you facilitate it. Players drive the narrative through their letters; you track progress and maintain the shared elements.
 
 ### Step 1: Create Your Campaign
 
@@ -142,7 +142,7 @@ Use Iron Vault to create a new campaign in your folder. Set up:
 - **Ironsworn:** A region of the Ironlands, or a specific area with defined borders
 - **Sundered Isles:** An archipelago, trade route, or stretch of the Cursed Seas
 
-But don't over-prepare — leave room for players to create their own locations within your region.
+But don't over-prepare, leave room for players to create their own locations within your region.
 
 ### Step 2: Define The Trouble
 
@@ -171,7 +171,7 @@ Create a vow file in your campaign's Progress folder. This is the mechanical hea
 - **Extreme:** 20 letters
 - **Epic:** 40 letters
 
-**Extreme** works well for most Epistolary campaigns — long enough to feel significant, short enough to actually complete. Go Formidable for a shorter arc with fewer players, or Epic if you want a truly long-running saga.
+**Extreme** works well for most Epistolary campaigns, long enough to feel significant, short enough to actually complete. Go Formidable for a shorter arc with fewer players, or Epic if you want a truly long-running saga.
 
 **The vow should:**
 - Directly respond to The Trouble
@@ -201,10 +201,10 @@ Write a campaign introduction that includes:
 ### Running the Game
 
 **Your ongoing responsibilities:**
-1. **Monitor letters** — Read new letters as they come in
-2. **Track progress** — Update the Shared Vow when letters mark progress (milestones)
-3. **Maintain context** — Keep the campaign docs updated if needed
-4. **Facilitate the endgame** — When the track is full, make the Fulfill Your Vow move and invite final letters
+1. **Monitor letters** - Read new letters as they come in
+2. **Track progress** - Update the Shared Vow when letters mark progress (milestones)
+3. **Maintain context** - Keep the campaign docs updated if needed
+4. **Facilitate the endgame** - When the track is full, make the Fulfill Your Vow move and invite final letters
 
 **You don't need to:**
 - Approve letters before they're posted
