@@ -51,3 +51,6 @@ BARILLE BLACK
 ahhhhHHHHHHH! 
 
 The first ship erupts, and before the others can react, the second one does too. These guys weren’t expecting a fight. Barille can’t quite get a shot on the third, which starts burning away. And then the frigate starts firing. Alarms are going off, missiles inbound, and this thing seems to have lots of guns. Barille burns and rolls the ship to evade. 
+
+
+
