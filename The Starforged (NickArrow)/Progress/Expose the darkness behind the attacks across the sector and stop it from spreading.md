@@ -1,12 +1,11 @@
 ---
 name: Expose the darkness behind the attacks across Devil's Chain and stop it from spreading
 rank: extreme
-progress: 0
+progress: 2
 tags:
   - incomplete
 track-type: Vow
 iron-vault-kind: progress
-
 ---
 
 
