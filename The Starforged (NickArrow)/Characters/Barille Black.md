@@ -36,7 +36,7 @@ assets:
       integrity/battered: false
       2/victory_marks: 0
     options:
-      name: SF-27
+      name: SN27
   - id: asset:starforged/path/bounty_hunter
     abilities:
       - true
