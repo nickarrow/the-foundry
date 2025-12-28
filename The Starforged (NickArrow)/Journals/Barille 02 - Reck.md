@@ -51,7 +51,7 @@ Before leaving  `iv-noroll:Reach a Milestone|move:starforged/quest/reach_a_miles
 
 Barille reflects on the little bit of information he has about the so called "horrors" of Reck. The job just stated "terrifying manifestations" not a lot to go on. Need to ask around. And someone has gone missing, let's find anyone in charge.  `iv-move:Gather Information|Wits|1|2|0|9|4|move:starforged/adventure/gather_information` 
 
-
+*note to self - need to resolve this miss from Gather Information.*
 
 
 
