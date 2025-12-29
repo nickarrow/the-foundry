@@ -27,21 +27,33 @@ COMMS OFFICER
 Reading you Barille, yeah, we’re all in one piece. That was you in the fighter right? 
 
 BARILLE BLACK
-Any idea who that was?
+Yeah, any idea who that was?
 
 COMMS OFFICER
 They transmitted a pretty long message, something about the Ascendancy of the Awakened Worlds? That mean anything to you?
 
 BARILLE BLACK
-Nope. Never heard of them. Trouble is, the suicided into Reck, so I guess we can’t ask them. You need anything?
+Nope. Never heard of them. Trouble is, the suicided into Reck, so I guess we can’t ask them. I can't raise anyone down there, trouble?
 
 COMMS OFFICER
-Yeah, the impact shook the entire canyon and its been pretty much disaster mode down here. We’re fine, thanks anyway. 
+Yeah, the impact shook the entire canyon and its been pretty much disaster mode down here. Reck is pretty wild on a good day, but the suicide attack has everyone either panicked or fighting fires. 
+
+BARILLE BLACK
+Got it. Thanks for the info. Barille out. 
 ```
 
 > So we have a name. `iv-entity-create:Faction|Ascendancy of the Awakened Worlds|The Starforged (NickArrow)/Factions/Ascendancy of the Awakened Worlds.md` A bit of a mouthful, and clearly not the most inconspicuous bunch. 
 
-Barille accesses the landing bay’s UI and requisitions a repair crew.  `iv-move:Repair|Supply|3|5|0|6|9|move:starforged/recover/repair` Looks like a full repair is possible, how long will this take?  `iv-oracle:Number|71|Many|oracle_rollable:sundered_isles/misc/magnitude/number` Not a quick fix though, many hours or a few days. Probably a few days. That’s fine. Need to start investigating for the [[Risen Union]] anyway. 
+Barille check's to see if the landing has an automated repair system. Negative. Okay, can I send a message? 
+
+```
+BARILLE BLACK - Typing via hand terminal
+*Landing bay 17, SN27 - Barille Black, requesting repairs.* 
+
+Yeah, I'm going to need to talk to someone. 
+```
+
+ > Okay, so that’s fine. Need to start investigating for the [[Risen Union]] anyway. Let's go for a walk. 
 
 Before leaving  `iv-noroll:Reach a Milestone|move:starforged/quest/reach_a_milestone` Barille sends out an encoded wideband broadcast. 
 
