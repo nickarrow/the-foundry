@@ -36,8 +36,10 @@ We're under attack, someone's shooting!
 
 Barille reaches into his pocket and flips a black iron coin. He catches it, and eyes the crewman.
 
+```
 BARILLE
 Get a message to your captain to burn like hell. I'll see if I can hold them off. NOW GO!
+```
 
 > Okay - not sure who these hostiles are, nor why they’d be going after us? Straight up piracy? Going to need to deal with the immediate, and very explody, problem - and then figure out who is actually attacking transport ships out here. 
 
