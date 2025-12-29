@@ -55,13 +55,21 @@ Yeah, I'm going to need to talk to someone.
 
  > Okay, so that’s fine. Need to start investigating for the [[Risen Union]] anyway. Let's go for a walk. 
 
-Before leaving  `iv-noroll:Reach a Milestone|move:starforged/quest/reach_a_milestone` Barille sends out an encoded wideband broadcast. 
+Before leaving Barille sends out an encoded wideband broadcast.  `iv-noroll:Reach a Milestone|move:starforged/quest/reach_a_milestone` 
 
 ![[Message 01 - Barille Black]]
 
 `iv-track-advance:Expose the darkness behind the attacks across Devil's Chain and stop it from spreading|The Starforged (NickArrow)/Progress/Expose the darkness behind the attacks across the sector and stop it from spreading.md|0|2|extreme|1` 
 
-Barille reflects on the little bit of information he has about the so called "horrors" of Reck. The job just stated "terrifying manifestations" not a lot to go on. Need to ask around. And someone has gone missing, let's find anyone in charge.  `iv-move:Gather Information|Wits|1|2|0|9|4|move:starforged/adventure/gather_information` 
+Barille get's out of his fighter and sets off. He reflects on the little bit of information he has about the so called "horrors" of Reck. The job just stated "terrifying manifestations" not a lot to go on. Need to ask around. And someone has gone missing, let's find anyone in charge.  `iv-move:Gather Information|Wits|1|2|0|9|4|move:starforged/adventure/gather_information` 
+
+> What is the dire threat or unwelcome truth?  `iv-oracle:Action + Theme|68|Journey Opportunity|oracle_rollable:starforgedsupp/templates/actiontheme` Reck is a frontier settlement with an *obvious social stratification*. It looks like there may be a bit of a revolution happening, and Barille just found himself smack in the middle of it. Good luck getting your ship repaired any time soon, and also...  `iv-oracle:Pay the Price|98|Your vehicle suffers damage, Your action causes collateral damage or has an unintended effect|move.oracle_rollable:starforged/fate/pay_the_price.pay_the_price` 
+> 
+> Looks like my message has attracted the wrong kind of attention. 
+
+A sudden crash and screeching of metal is heard from behind Barille, in the landing bay. He runs back to see the large grapple hook 
+
+`iv-meter:Snub Fighter / Integrity|2|1` 
 
 *note to self - need to resolve this miss from Gather Information.*
 
