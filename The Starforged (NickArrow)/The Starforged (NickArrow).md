@@ -11,7 +11,7 @@ ironvault:
       - oracle_rollable:sundered_isles/weather**
       - oracle_rollable:sundered_isles/treasure**
       - "!oracle_rollable:sundered_isles/misc/local**"
-  customContentFolder: Custom Content
+  customContentFolder: Starsmith
 iron-vault-kind: campaign
 
 ---
