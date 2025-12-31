@@ -20,6 +20,8 @@ Let's get you set up and playing.
 
 ### Step 2: Create a GitHub Personal Access Token
 
+NEED TO REWRITE THIS!!!!!
+
 1. Go to [GitHub Personal Access Tokens](https://github.com/settings/tokens)
 2. Click "Generate new token" → "Generate new token (classic)"
 3. Name it something like "The Foundry - FIT Plugin"
