@@ -1,0 +1,14 @@
+views:
+  - type: table
+    name: Changelog
+    order:
+      - file.name
+      - file.path
+      - file.mtime
+    sort:
+      - property: file.mtime
+        direction: DESC
+    columnSize:
+      file.name: 207
+      file.path: 285
+      file.mtime: 216
