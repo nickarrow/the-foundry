@@ -24,24 +24,23 @@ Let's get you set up and playing.
 2. Click "Generate new token" → "Generate new token (classic)"
 3. Name it something like "The Foundry - FIT Plugin"
 4. Set expiration (if it expires you'll just need to regenerate it and copy/paste into FIT settings)
-5. Select the `repo` scope (Full control of private repositories)
+5. Select the `repo` scope (per the screenshot below)
+6. Click "Generate token"
+7. **Copy the token immediately** — you won't see it again (but you can always regenerate it if you need to)
 
 **EXAMPLE TOKEN SETTINGS:**
 
 <img width="600" height="425" alt="image" src="https://github.com/user-attachments/assets/b37b3307-5481-4a8c-b600-6ad63c31271a" />
 
-7. Click "Generate token"
-8. **Copy the token immediately** — you won't see it again (but you can always regenerate it if you need to)
-
 ### Step 3: Install and Configure FIT Plugin
 
 FIT (Minimalist File giT) handles syncing your vault with GitHub.
 
-1. Go to Settings → Community Plugins
+1. In Obsidian, go to Settings → Community Plugins
 2. Browse and install **FIT**
 3. Enable the plugin
 4. Open FIT settings
-5. Paste your personal access token
+5. Paste your copied personal access token from GitHub
 6. Click "Authenticate" — your username will auto-populate
 7. Toggle on "Manual repository entry"
 8. Write in `nickarrow` as the repo-owner
@@ -53,7 +52,6 @@ FIT (Minimalist File giT) handles syncing your vault with GitHub.
 **EXAMPLE FIT PLUGIN SETTINGS:**
 
 <img width="600" height="443" alt="image" src="https://github.com/user-attachments/assets/f64dd9bf-f513-4af0-8bd3-7e32749250b5" />
-
 
 ### Step 4: Initial Sync
 
