@@ -12,7 +12,7 @@
 - 🌍 **Build shared worlds** — Watch the universe grow as players contribute to each other's stories
 
 All governance happens automatically through GitHub Actions — no manual permission management, no drama.
-
+hi
 ## How Ownership Works
 
 Every file has exactly one owner — whoever created it. Simple.
