@@ -42,15 +42,13 @@ The Foundry follows the community rules from the [Ironsworn Discord](https://dis
 
 **1. Hateful ideologies are not tolerated.** This includes but is not limited to hate speech based on race, gender, sexuality, religion, disability, or any other attacks on one's personhood.
 
-**2. Be kind.** Discuss, don't argue. Respect the input of others. Everyone's contributions, experiences, and approaches are valued (though see rule #1). Threatening behavior, abuse, or harassment of any kind are not tolerated.
+**2. Be kind.** This is a shared creative space. Respect the input of others. Everyone's contributions, experiences, and approaches are valued (though see rule #1). Threatening behavior, abuse, or harassment of any kind are not tolerated.
 
 **3. Keep it clean.** Avoid NSFW content. When in doubt, mark it as NSFW or use content warnings.
 
 **4. Support creators.** Do not upload commercial PDFs or links to pirated materials, and do not discuss pirated content.
 
-**5. Be respectful.** This is a shared creative space.
-
-**6. The "Yes, and..." Philosophy** The Foundry embraces the improv principle of building on others' contributions rather than negating them.
+**5. The "Yes, and..." Philosophy** The Foundry embraces the improv principle of building on others' contributions rather than negating them.
 
 While The Foundry's technical systems prevent you from editing or deleting other players' files, you can still write whatever you want in your *own* files. This is where "Yes, and..." becomes a social contract:
 
