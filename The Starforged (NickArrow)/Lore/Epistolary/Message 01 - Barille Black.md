@@ -1,7 +1,7 @@
 # Encoded Wideband Broadcast
 
 **From:** [[Barille Black]]
-**To:** Anyone With Code Clearance 
+**To:** Anyone With Code Clearance
 
 ---
 

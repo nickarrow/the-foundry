@@ -14,7 +14,6 @@
 All governance happens automatically through GitHub Actions — no manual permission management, no drama.
 
 ## How Ownership Works
-
 Every file has exactly one owner — whoever created it. Simple.
 
 **What you can do:**
@@ -29,7 +28,7 @@ The Foundry silently restores it. Your next sync pulls the corrected version. No
 
 ## Getting Started
 
-### Prerequisites
+**You'll need:**
 - [Obsidian](https://obsidian.md/)
 - [GitHub account](https://github.com/)
 - Repository access - [Join our Discord](https://discord.gg/A3t4mPq2QH)  and contact @nickarrow
